@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        table, td {
+            border: 1px solid blue;
+        }
+        table {
+            width: 500px;
+        }
+
+        tr:nth-child(even) { background: rgb(227, 50, 243); }
+        tr:nth-child(odd) { background: rgb(50, 230, 243); }
+
+        a {color: white;}
+
+    </style>
+
+</head>
+<body>
+
+    <div id = "tab1"></div>
+    
+<script>
+let x = prompt("Введите кол-во столбцов:");
+let y = prompt("Введите кол-во строк:");
+
+let tab = `<table>`, c=1;
+
+    for (i=1; i<=y; i++) {
+
+        tab += `<tr>`;
+        
+            for (j=1; j<=x; j++) {
+
+                tab += `<td><a href="link${c}.html">Ячейка ${c}</a></td>`;
+                c++;
+            }
+
+        tab += `</tr>`;
+    }
+
+    tab += '</table>';
+
+    tab1.innerHTML = tab;
+
+</script>
+
+
+</body>
+</html>
