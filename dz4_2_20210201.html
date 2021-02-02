@@ -7,7 +7,7 @@
 </head>
 <body>
     
-<script>
+<!-- <script>
 
     let fruits = [];    
 
@@ -33,7 +33,68 @@
 
         alert (`Элементы массива: ${fruits} Минимальное значение: ${myMin}`);
 
+</script> -->
+    
+<!-- <script>
+
+    let fruits = [];    
+
+    for (i = 0; i <= fruits.length; i++) {
+            let num = prompt("Введите любое число: ");
+                if (num == '' || !isFinite(num) || num == null) {       
+                    // alert ("Отмена");
+                    break;
+                    } fruits.push(`${num}`);
+                }
+
+
+    let minNum = fruits[1];
+    
+        for (i = 1; i < fruits.length; i++) {
+        if (fruits[i] < minNum) {            
+            minNum = fruits[i]; myMinNum = i;
+            
+        } myMin = minNum;   myMinNum = fruits[+minNum+1];
+    } 
+    
+    // alert (myMin)
+
+        alert (`Элементы массива: ${fruits} Минимальное значение: ${myMin} С номером в массиве: ${myMinNum}`);
+
+</script> -->
+
+
+<script>
+
+    let fruits = [];
+    let myMinNum = 0;    
+
+    for (i = 0; i <= fruits.length; i++) {
+            let num = prompt("Введите любое число: ");
+                if (num == '' || !isFinite(num) || num == null) {       
+                    // alert ("Отмена");
+                    break;
+                    } fruits.push(`${num}`);
+                }
+
+
+    let minNum = fruits[1];
+    
+        for (i = 1; i < fruits.length; i++) {
+        if (fruits[i] < minNum) {            
+            minNum = fruits[i]; myMinNum = i;
+            
+        } myMin = minNum;
+    } 
+    
+    // alert (myMin)
+
+        alert (`Элементы массива: ${fruits} Минимальное значение: ${myMin} С номером в массиве: ${myMinNum}`);
+
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
