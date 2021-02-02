@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        console.log("Hello!");
+
+    </script>
+
+    <script src="myscript.js"></script>
+
+</head>
+<body>
+    
+    <script>
+
+        // alert("Привет из Javascript!");
+
+
+        /* операторы языка */
+
+    </script>
+
+    <p id="p1"></p>
+
+    <script>
+        // "use strict"; //строгий режим 
+
+        // типы данных:
+        // - число (Number);
+        // - строка (String);
+        // - логический тип (Boolean);
+
+        // - null
+        // - undefined
+        // - object
+        // - symbol
+
+
+        const MY_COLOR = "magenta"; // константа
+
+// Ctrl+Z - отмена действия
+// Ctrl+Y - повторить действие
+
+// Объявления переменных
+// var - локальная переменная
+// let - блочная переменная = локальная переменная
+//    переменная без ключевого слова - глобальная 
+//                                     переменная
+        let myString = "";
+        myString = "Новый текст"; // глобальная
+        let myString1 = "Параграф"; // блочная
+
+    // myString2 = prompt("Введите строку текста");
+
+        // p1.innerHTML = myString2;
+        // p1.style.color = MY_COLOR;
+
+        let str1 = "Текст 1 " + myString +
+        " Окончание текста"; // двойные кавычки
+
+        let str2 = 'Текст 2 ' + myString +
+        " Окончание текста"; // одиночные
+        
+let str3 = `Текст 3 ${myString} Окончание текста`; // обратные одиночные
+
+        // alert(str3);
+
+    let s1 = new String();
+    let s2 = new String("125.7"); //s2="125.7";
+
+    
+    
+     let a = 5; 
+    //  a = "строка"; 
+     b = 3.5;
+     c = .5; // 0.5
+     
+     d = new Number();
+     e = new Number(7); // e = 7;
+
+         
+     b1 = true;
+     b2 = new Boolean(false);
+
+
+    // инкремент / декремент
+
+    a = a + 1; // увеличение а на  = 6
+    a++; // 7
+
+    a = a - 1; // уменьшение а на  = 6
+    a--; // 5
+
+    // alert(a);    
+
+     b = b + 7;   
+     b += 5.4; // увеличение b на 5.4 = 15.9
+     
+     b = b - 3;
+     b -= 2; // уменьшение b на 2 = 10.9
+     
+    //  alert(b);
+
+        // alert(typeof(str1));
+
+        // операторы сравнения
+        // alert(2 > 1);
+        // alert(2 < 1);
+        // alert(2 >= 1);
+        // alert(2 <= 1);
+        // alert(2 == 1);
+        // alert(2 != 1);
+
+        alert(0 === false); //false - сревнение 
+                        // без преобразования типа
+        alert(0 == false); //true - сревнение 
+        // c преобразованием типа
+
+    </script>
+
+</body>
+</html>

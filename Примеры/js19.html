@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let a=1.774, x=-2.7, m=5, n=1;
+
+        // y = Math.sqrt(a + Math.pow(n,2) * Math.pow(x,2)) / 
+        //     (a + x) * m;
+
+        with (Math) { y = sqrt(a + pow(n,2) * pow(x,2)) / 
+        (a + x) * m  };
+           
+        alert(y); 
+        
+        
+
+        if (Math.abs(y) < 1) z = y +1
+            else z = Math.sin(Math.pow(y,2));
+            
+        alert(z);    
+
+
+    </script>
+
+
+</body>
+</html>

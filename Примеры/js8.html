@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="pic"></div>
+
+    <!-- <script>
+        let s ="", w = 50;
+
+        while (w<1000) {
+        s += ` <img src="https://materiki.ru/wp-content/uploads/2016/06/%D0%9C%D0%B8%D0%BD%D1%81%D0%BA.jpg" 
+    style="width: ${w}px">`;
+        w += 50; // w = w +50;    
+
+        }
+
+        pic.innerHTML = s;
+
+    </script> -->
+
+    <script>
+        let s ="";
+        for (w = 50; w<1000; w+=50) {
+            s += ` <img src="https://materiki.ru/wp-content/uploads/2016/06/%D0%9C%D0%B8%D0%BD%D1%81%D0%BA.jpg" 
+    style="width: ${w}px">`;   
+        }
+
+        pic.innerHTML = s;
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <script>
+
+    let age = prompt("Укажите возраст:", 18);
+    // короткая форма if 
+    // let access = (age >= 18) ? true : false;
+
+    // alert(access);
+
+
+
+        // Полная форма
+        // if (age >= 18) access = true
+        //     else access = false;
+        // alert(access);
+
+        
+        // Множественный выбор
+    let message = (age <= 14) ? 'Вы - ребенок' :
+    (age <= 19) ? 'Вы - подросток' :
+    (age <= 28) ? 'Вы - юноша' :   
+    (age <= 100) ? 'Вы - взрослый' :
+        'Вы - суперстар!'
+
+        alert(message);
+        
+    </script>
+
+</body>
+</html>

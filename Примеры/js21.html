@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+        img { cursor: pointer; }
+    </style>
+</head>
+<body>
+    
+    <div id="box1"></div>
+    <div id="box2"></div>
+
+    <script>
+        let s='', s1='';
+        for (i=1; i<=3; i++) {
+  s += `<img onclick="showPicture(${i})" src="images/${i}.jpg">`;
+        }
+        
+        box1.innerHTML = s;
+
+        function showPicture(n) {
+            box2.innerHTML = `<img style="width: 800px" 
+            src="images/${n}.jpg">` 
+        }
+
+
+    </script>
+
+
+</body>
+</html>

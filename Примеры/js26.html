@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form name="myForm">
+
+        <input type="text" name="userName" placeholder="Введите имя">
+        <input type="button" value="Поздороваться" 
+        onclick="say()">
+        <input type="reset">
+
+    </form>
+
+    <script>
+
+        function say() {
+            n = myForm.userName.value;
+            if (n == '') alert('Строка не заполнена')
+            else {
+            myForm.userName.value = `Привет, ${n}!`;
+            }
+            // alert(n);
+        }
+
+    </script>
+
+</body>
+</html>

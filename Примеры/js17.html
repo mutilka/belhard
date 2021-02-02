@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box1"></div>
+
+    <script>
+        s="";
+        w=1;
+
+        while (w<=11) {
+            if (w % 2 == 0) {
+       s += `<img src="images/${w}.jpg" style="height: 200px; 
+    border: 7px solid green; padding: 5px">`;     
+
+        } else {
+       s += `<img src="images/${w}.jpg" style="height: 200px; 
+    border: 7px solid blue; padding: 5px">`;    
+        } // else 
+
+        w++;
+} //while 
+
+box1.innerHTML = s;
+
+    </script>
+
+    
+
+
+</body>
+</html>

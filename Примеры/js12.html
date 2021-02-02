@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        browser = prompt("Укажите Ваш браузер");
+
+    switch (browser) {
+        case 'IE':
+            alert('У Вас IE');
+            break;
+            
+// множественный выбор
+        case 'Chrome':
+        case 'Firefox':
+        case 'Safari':
+        case 'Opera':              
+            alert(`${browser} мы поддерживаем`);
+            break;
+
+        default:
+            alert('Сообщите о проблемах');    
+
+
+    }
+
+
+    </script>
+
+
+</body>
+</html>

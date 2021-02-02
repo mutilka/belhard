@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+
+    // 1. Объявить массив из слов "красный", "желтый", "зеленый"
+    // 2. Вывести эти слова в окно браузера и покрасить их 
+    //    в соответствующий цвет   
+    
+    // let a = ["красный", "желтый", "зеленый"];
+    // let s ="", c = "";   
+    // for(i=0; i<a.length; i++) {
+    //         if (a[i] == "красный") c = "red"
+    //            else if (a[i] == "желтый") c = "yellow"
+    //                else c = "green";
+    //         s += `<p style="color: ${c}">${a[i]}</p>`
+    // }
+
+    let a = ["red", "yellow", "green"];
+    let s = '';
+            for (i=0; i<a.length; i++) {
+                s += `<p style="color: ${a[i]}">${a[i]}</p>`;
+            }
+
+
+        box.innerHTML = s;
+
+    </script>
+    <!-- <p style="color: red">красный</p> -->
+</body>
+</html>
