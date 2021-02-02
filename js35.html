@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+    /* body {
+        background: #000000;
+    } */
+
+</style>
+
+</head>
+<body>
+
+    <p id="p1"></p>
+    <p><button onclick="clearTimeout(timerId)">Стоп</button></p>
+    <p><button onclick="flash()">Старт</button></p>
+    
+    <script>
+
+
+timerId = 0;
+        function flash() {
+        color = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
+
+        // #0-9 a-f
+        // #41aedc
+
+        n = 0;
+        s = '#';
+        
+
+
+        for (i = 0; i < 6; i++) {
+            n = Math.floor(Math.random()*color.length);
+            s += color[n];
+        }
+    
+
+        
+
+        p1.innerHTML = `${s} ${timerId}`;
+        document.body.style.background = s;
+
+        timerId = setTimeout('flash()', 500);
+
+    }
+     
+    flash();
+
+    </script>
+
+
+
+</body>
+</html>
