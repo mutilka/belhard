@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <div id="box1"></div>
+    <div id="box2"></div>
+
+<script>
+// Вывод четных чисел
+    let evenNum = "";
+    let s = "";
+
+    do {
+        evenNum++;
+        if (evenNum % 2 !== 0) continue;
+        // alert (`Это четные числа от 2 до 10: ${s} ${evenNum}`); //можно ли вывести в алерт все числа?
+        s = s + evenNum + " ";
+        box1.innerHTML = s;        
+    } while (evenNum>=0 && evenNum<=9);
+    alert (`Это четные числа от 2 до 10: ${s}`); //вот так похоже выводит
+
+</script>
+
+<script>
+// Вывод нечетных чисел
+    let oddNum = "";
+    let n = "";
+
+    do {
+        oddNum++;
+        if (oddNum % 2 == 0) continue;
+        // alert (`Это нечетные числа от 2 до 10: ${n} ${oddNum}`); //можно ли вывести в алерт все числа?
+        n = n + oddNum + " ";
+        box2.innerHTML = n;
+    } while (oddNum>=0 && oddNum<=10);
+    alert (`Это нечетные числа от 2 до 10: ${n}`); //вот так похоже выводит
+
+</script>
+
+</body>
+</html>

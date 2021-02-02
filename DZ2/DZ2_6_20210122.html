@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+
+
+<body>
+    
+    <div id="box"></div>
+
+    <script>
+        let i = 0;
+        let s = "";
+        let gn = "green";
+        let bu = "blue";
+
+            while (i <= 9) {
+                i++;
+                if (i % 2 !== 0) {
+                    s += ` <img src="images/${i}.png" style="border: 3px solid ${bu}">`;
+                }
+                else if (i % 2 == 0) {
+                s += ` <img src="images/${i}.png" style="border: 3px solid ${gn}">`;
+                }      
+        }
+
+        box.innerHTML = `${s}`;
+    </script>
+
+
+</body>
+</html>

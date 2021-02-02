@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        let login = "";
+        let password = "";
+
+        login = prompt("Введите логин", 'admin');
+
+        if (login == "Admin") {
+                password = prompt("Введите пароль", 123123);
+
+                    if (password == 123321) {
+                    alert('Добро пожаловать!');
+                }
+
+                else if (password !== 123321) {
+                    alert('Пароль неверен!')
+                }
+
+                else if (password = null) {
+                    alert('Вход отменен')
+                }
+            }
+
+        else if (login == null) {
+            alert('Вход отменен');
+        }
+
+        else {
+            alert('Пользователь не найден!');
+        }
+
+    </script>
+
+
+</body>
+</html>

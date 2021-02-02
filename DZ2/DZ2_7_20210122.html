@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="box"></div>
+
+    <script>
+
+        
+        let col = "";
+        let row = "";
+        let table = "";
+        let j = 1;
+        let count = 0;
+        // let i = "";
+        let bu = `style="border: 3px solid blue; width: 500px"`;
+        // let bu = "";
+        
+
+        col = prompt('Введите количество столбцов:', 4);
+        row = prompt('Введите количество строк:', 10);
+        // let counter;
+
+        table = `<table ${bu}>`;
+
+            for (i = 0; i < row; i++) {
+                table += `<tr>`;
+                for (let j = 1; j <= col ; j++) {
+                    table += `<td ${bu}>` + ++count + `</td>`
+                }
+                table += `</tr>`;
+            }
+
+             box.innerHTML = table + `</table>`;
+
+
+        console.log(col);
+        console.log(row);
+        console.log(table);
+
+    </script>
+
+
+
+  <!-- выводит: 1234 ААААААААА!!!
+                1234
+                1234
+
+            for (i = 0; i < row; i++) {
+                table += `<tr>`;
+                for (let j = 1; j <= col ; j) {
+                    table += `<td ${bu}>` + j++ + `</td>`
+                }
+                table += `</tr>`;
+            } 
+    
+   -->
+
+</body>
+</html>
