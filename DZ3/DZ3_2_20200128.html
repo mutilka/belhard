@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let a = prompt('Введите число а: ');
+        let b = prompt('Введите число b: ');
+
+
+        // Исходный скрипт
+
+        // if(+a + +b<4) { // Преобразовал в число
+        //     result = 'Мало';
+        // } else {
+        //     result = 'Много';
+        // }
+
+
+        // '?' тернарный
+
+        // let result = (+a + +b<4) ? 'Мало' : 'Много';
+
+        // let result = (+a + +b<4) ? 'Мало' : (+a + +b>4) ? 'Много' : 'Угадал 4!';
+
+        
+        // alert(result);
+
+
+        // switch
+
+            let sum = (+a + +b);
+
+            switch (sum) {
+                case 0:
+                case 1:
+                case 2:
+                case 3: 
+                alert( 'Мало' );
+                break;
+                case 4:
+                alert( 'В точку!' );
+                break;
+                default:
+                alert( 'Много' );
+            }
+
+
+
+    </script>
+
+</body>
+</html>

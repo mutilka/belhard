@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+
+    let m = Number(prompt("Введите число M:", 5));
+    let n = Number(prompt("Введите число N:", 3));
+
+
+    // вариант 1
+
+    function mFactorial(x) {
+        let mFact = 1;
+        for (i = 0; i < x; i++) {
+            mFact = mFact * (x - i);
+        }
+        return mFact; // возврат значения в точку вызова функции
+    }
+
+
+    // // вариант 2 c хабра
+
+    // function nFactorial(n) {
+    //     for (i; n; i++) {
+    //         nFact *= n--;
+    //     }
+    //     return nFact; // возврат значения в точку вызова функции
+    // }
+
+
+
+
+    alert('Факториал числа M:' + " " + m + '!=' + mFactorial(m));
+    alert('Факториал числа N:' + " " + n + '!=' + mFactorial(n));
+    alert('Факториал (M + 1):' + " " + '(' + m + '+1)' + '!=' + mFactorial(m+1));
+
+
+
+
+
+    let c = (mFactorial(m) + mFactorial(n)) / (mFactorial(m+1));
+    
+    alert(`'Результат выражения: ' ${c}`);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        div {
+            border: 1px solid blue;
+            padding: 10px;
+            margin: 10px;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+    <p id="div1"></p>
+    <!-- <div id="div1"></div> -->
+    
+<script>
+
+let myDiv = +prompt('Введите количество DIV: ', 11);
+let myPic = +prompt('Введите количество картинок: ', 3);
+
+
+let lalaDiv = '';
+
+
+    for (let i = 1; i <= myDiv; i++) {
+        lalaDiv += '<div>'
+            for (let j = 1; j <= myPic; j++) {
+                lalaDiv += `<img src="images/${j}.png" style="border: 3px solid">`;
+            }
+        lalaDiv += '</div>';
+
+    }    
+
+        // box.innerHTML = s;
+
+
+    // div1.innerHTML = lalaDiv + myPic;
+div1.innerHTML = lalaDiv;
+
+</script>
+
+</body>
+</html>

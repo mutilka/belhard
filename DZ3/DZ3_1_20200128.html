@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+    let m = prompt("Введите число M:", 5);
+    let n = prompt("Введите число N:", 5);
+    let mFact = 1;
+    let nFact = 1;
+    let mPlusFact = 1;
+
+    // вариант 1
+
+    function mFactorial(m) {
+        for (i = 0; i < m; i++) {
+            mFact = mFact * (m - i);
+        }
+        return mFact; // возврат значения в точку вызова функции
+    }
+
+    function mPlusFactorial(m) {
+        for (i = 0; i < m; i++) {
+            mPlusFact = mPlusFact * ((+m+1) - i); 
+        }
+        return mPlusFact; // возврат значения в точку вызова функции
+    }
+
+    // вариант 2 c хабра
+
+    function nFactorial(n) {
+        for (i; n; i++) {
+            nFact *= n--;
+        }
+        return nFact; // возврат значения в точку вызова функции
+    }
+
+// Вызываем функции для вычисления результирующих переменных
+
+    mFactorial(m);
+    nFactorial(n);
+    mPlusFactorial(m);
+
+    alert('Факториал числа M:' + " " + m + '!=' + mFact);
+    alert('Факториал числа N:' + " " + n + '!=' + nFact);
+    alert('Факториал (M + 1):' + " " + '(' + m + '+1)' + '!=' + mPlusFact);
+
+    let c = (mFact + nFact) / (mPlusFact);
+    
+    alert(`'Результат выражения: ' ${c}`);
+
+</script>
+
+</body>
+</html>
