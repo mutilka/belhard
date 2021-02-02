@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+<style>
+
+    ul {
+        margin-top: 30px;
+        list-style: none;
+        display: flex;
+    }
+
+    a {
+        padding: 16px;
+        /* background: #41aedc;
+        text-decoration: none;
+        color: #ffffff; */
+    }
+
+    /* a:hover {
+        background: #fd9c10;
+    } */
+
+</style>
+
+</head>
+<body>
+
+    <h1>Создать меню</h1>
+
+    <form name="formMenu">
+
+        <p>Пункты меню: <input type="text" name="elemMenu" size="50" value="Главная, О компании, Новости"></p>
+
+        <p>Цвет текста: <input type="color" name="fColor" value="#ffffff"></p>
+
+        <p>Цвет фона: <input type="color" name="bColor" value="#41aedc"></p>
+        
+        <p>Цвет при наведении мышки: <input type="color" name="hColor" value="#fd9c10"></p>
+
+        <p><input type="button" value="Создать меню" onclick="menu()"></p>
+
+    </form>
+
+    <style id="myStyle"></style>
+    <p id="myMenu"></p>
+    <div id="big"></div>
+
+
+<!-- <ul>
+    <li><a href="#">Главная</a></li>
+    <li><a href="#">О компании</a></li>
+</ul> -->
+
+    <script>
+
+        function menu() {
+            // alert('menu');
+            elemMenu = formMenu.elemMenu.value; // переменную можно называть как значение name="".
+            arrMenu = elemMenu.split(', ');
+            fc = formMenu.fColor.value; // foreground color
+            bc = formMenu.bColor.value; // background color
+            hc = formMenu.hColor.value; // hover color
+
+            let s = '';
+            let s1 = '';
+            let myList = '';
+            let myStyle1 = '';
+
+            for (i = 0; i < arrMenu.length; i++) {
+
+                s += `<li onclick='bigPic(${i+1})'><a href="#">${arrMenu[i]}</a></li>`;
+
+            }
+            myList = `<ul>${s}</ul>`;
+
+
+            myStyle1 = `
+            
+            a {
+                background: ${bc};
+                color: ${fc};
+            }
+
+            a:hover {
+                background: ${hc};
+            }           
+            
+            `;
+
+            myStyle.innerHTML = myStyle1;
+            myMenu.innerHTML = myList;
+
+        }
+
+            function bigPic(p) {
+
+                s1 = `<img onclick="big.innerHTML = ''" src="DZ3/images/${p}.jpg" alt="">`;
+                big.innerHTML = s1;
+
+            }
+
+    </script>
+
+    
+
+
+</body>
+</html>
