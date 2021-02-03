@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <p id="images"></p>
+    <p id="big"></p>    
+  
+    
+    <script>
+
+        let arrImg = [1,2,3];
+        let arrSign = ["Ням", "Ном", "Омномном"];
+        let s='';
+
+        for (i=1; i<arrImg.length+1; i++) {
+             s += `<img onclick='bigPic(${i})' src="images/${i}.png" width="32px">`;
+    } 
+    
+    function bigPic(p) {
+        s1 = `<img src="images/${p}.png" width="300px"> <figcaption id="sign">${arrSign[p-1]}</figcaption>`;
+        big.innerHTML = s1;
+    }
+
+    images.innerHTML = s;
+    
+    </script>
+
+</body>
+</html>
+
+<img src="">
