@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="p1"></p>
+
+    <script>
+
+        // Метод join()
+
+    let arr = ['Маша','Петя','Марина','Василий'];
+
+    let myString = arr.join(' | ');
+
+    p1.innerHTML = myString;    
+
+    
+    //   Метод split();
+    let names = 'Маша, Петя, Марина, Василий';
+
+        let  arrMenu = names.split(', ');
+        alert(arrMenu);
+
+        // for (i=0; i<arrMenu.length; i++) 
+        // alert(`Вам сообщение ${arrMenu[i]}`);
+
+
+        // Вам сообщение: Маша
+        for (let name of arrMenu) {
+            alert(`Вам сообщение: ${name}`)
+        }
+
+
+    </script>
+
+
+</body>
+</html>
