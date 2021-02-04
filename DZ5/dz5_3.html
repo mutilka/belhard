@@ -23,7 +23,7 @@
     } 
     
     function bigPic(p) {
-        s1 = `<img src="images/${p}.png" width="300px"> <figcaption id="sign">${arrSign[p-1]}</figcaption>`;
+        s1 = `<img onclick="big.innerHTML = ''" src="images/${p}.png" width="300px"> <figcaption id="sign">${arrSign[p-1]}</figcaption>`;
         big.innerHTML = s1;
     }
 
