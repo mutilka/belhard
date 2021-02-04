@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        div {
+            width: 200px;
+            height: 200px;
+            background: #fc0;
+            float: left;
+        }
+
+
+    </style>
+
+
+</head>
+<body onload="newColor()">
+    
+    <span id="colorBlock"><div id="d1"></div></span>
+    <!-- <p><button onclick="newColor()">Поменять цвет</button></p> -->
+
+
+    <script>
+
+
+        function newBlock() {
+
+            d = prompt('Сколько блоков');
+
+            newColor();
+
+        }
+
+        myDiv='';
+        
+        function newColor() {
+
+            for(j=1; j<=d; j++) {
+                // console.log(d);
+
+
+
+
+            color = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
+            n = 0;
+            s = '#';
+            
+
+    
+    
+            for (i=0; i<6; i++) {
+            n = Math.floor(Math.random()*color.length);
+            s += color[n];
+            }
+
+            myDiv += `<div style="background: ${s}"></div>`;
+            
+
+            // d1.style.background = s;
+
+        }
+            console.log(myDiv);
+            colorBlock.innerHTML = muDiv;
+
+            // if (timerId == d) clearTimeout(timerId) 
+            // else timerId = setTimeout('newColor()', 1000);
+        }
+
+
+
+    </script>
+
+</body>
+</html>

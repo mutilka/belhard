@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <!-- <section id="div1"></div> -->
+
+        <section  id="id1"></section>
+
+    <script>
+
+        // Перебор for ... in
+
+        let menu = {
+            width: 300,
+            height: 200,
+            title: "Menu",
+            fontS: 34
+        }
+
+        let count = 0; // подсчитываем свойства объекта
+        for (let key in menu) {
+            alert(`Свойство: ${key}; Значение: ${menu[key]}`);
+            count++
+        }
+
+
+        // Не успел все смотри пример js41
+        alert(`Всего свойств у объекта: ${count}`);
+
+        myDiv = `<div style = "width: ${menu.width}px; height: ${menu.height}px; background: lightseagreen;"></div>`
+
+        id1.innerHTML = myDiv;
+
+    </script>
+
+    
+    
+</body>
+</html>

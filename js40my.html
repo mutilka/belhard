@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // оператор in
+
+        let person = {};
+
+        person.name = 'Вася';
+        person.age = 25;
+
+        alert(`${person.name}: ${person.age}`);
+
+        delete person.age;
+
+        alert(`${person.name}: ${person.age}`);
+
+        if ("age" in person) alert('Существует')
+        else alert('Не существует')
+
+        // доступ через квадратные скобки
+        person['name'] = 'Петя'; // то же что person.name
+        alert(person['name']);
+
+
+
+        //  доступ к свойству объекта через переменнную 
+        person.age = 30;
+        let key = 'age';
+        alert(person[key]); // обратится к person.age или person['age']
+
+    
+    </script>
+
+</body>
+</html>
