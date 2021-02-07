@@ -5,32 +5,110 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+
+        div {
+            border: 3px solid blue;
+            padding: 10px;
+            margin: 10px;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+        }
+
+        img {
+            max-width: auto;
+            height: 100px;
+        }
+
+        figure {
+            display: inline-block; /* Выстраиваем по горизонтали */
+            background: #a0bff8; /* Цвет фона */
+            padding: 10px; /* Поля */
+            margin: 0 1em 0 0; /* Отступ справа */
+            vertical-align: top; /* Выравниваем по верхнему краю */
+   }
+        figcaption { 
+            text-align: center; /* Выравниваем по центру */
+   }
+
+        #big.img {
+            height: 1000px;
+        }
+
+
+    </style>
+
 </head>
 <body>
-    
+ 
+    <div id="div1"></div>
+    <div id="big"></div>
 
 <script>
 
 let pictures = {
-            imgSrc1: ,
-            imgDesc: "Красный костел",
-            id: 5566,
+            // imgSrc1: `<img onclick="big.innerHTML = ''" src="im/red.jpg">`,
+            imgSrc1: `im/red.jpg`,
+            imgName1: "Красный костел",
+            imgDesc1: "В храме святого Симеона и святой Елены находится полномасштабная копия Туринской Плащаницы.",
+            imgSrc2: `im/troi.jpg`,
+            imgName2: "Троицкое предместье",
+            imgDesc2: "Троицкое предместье — исторический район города Минска, расположенный в северо-восточной части исторического центра на левом берегу реки Свислочь.",
+            imgSrc3: `im/mir.jpg`,
+            imgName3: "Мирский замок",
+            imgDesc3: "Построенный в начале XVI в. магнатом Ю. И. Ильиничем замок стал первым частнособственническим замком на землях Беларуси",
 
-    fullName: function() {
-    return `${this.fistName} ${this.lastName}`;
-            }
+                }
+
+                function newSrc() {
+                    for (key in pictures) {
+                        console.log(pictures[key]);
+                    // alert(pictures[key]);
+                    }
+                };
+
+                newSrc();
+
+        let src1 = pictures.imgSrc1;
+        let fig1 = (pictures.imgName1);
+        alert(src1);
+
+        let src2 = (pictures.imgSrc2);
+        let fig2 = (pictures.imgName2);
+        alert(src2);
+
+        let src3 = (pictures.imgSrc3);
+        let fig3 = (pictures.imgName3);
+        alert(src3);
+
+        div1.innerHTML = `<figure><img onclick='bigPic(${src1})' src="${src1}"><figcaption>${fig1}</figcaption></figure>
+                            <figure><img onclick='bigPic(${src2})' src="${src2}"><figcaption>${fig2}</figcaption></figure>
+                            <figure><img onclick='bigPic(${src3})' src="${src3}"><figcaption>${fig3}</figcaption></figure>`;
+
+
+        function bigPic(p) {
+            let s1 = `<img onclick=" big.innerHTML = ''" src="${p}" width="100%" height="100%">`;
+
+            // s1 = `<img onclick="big.innerHTML = ''" src="${p}" width="300px"> <figcaption id="sign">${imgDesc1}</figcaption>`;
+            big.innerHTML = s1;
 
         }
 
-        // Обращение к свойству
-        alert(person.fistName);
 
-        // Обращение к методу
-        let name = person.fullName();
+        
+
+        bigPic(src1);
+        // big.innerHTML = s1;
+
+
 
 </script>
 
-<img src="im/red.jpg">
+<!-- <img src="im/red.jpg"> -->
+
 
 </body>
 </html>
