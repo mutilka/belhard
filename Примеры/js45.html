@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="myImg"></p>
+
+    <script>
+        // объект с одинаковым именем свойства pic
+        let s ='';
+
+        arrObj = [
+            { pic: { f:'1.jpg', w:500, h:500} },
+            { pic: { f:'2.jpg', w:700, h:700} },
+            { pic: { f:'3.jpg', w:900, h:900} }
+        ];
+
+        for (i=0; i<arrObj.length; i++) {
+           f = arrObj[i].pic.f;
+           w = arrObj[i].pic.w;
+           h = arrObj[i].pic.h; 
+
+           s += `<img src="images/${f}" 
+           style="width: ${w}px; height: ${h}px">`; 
+
+        }
+
+        myImg.innerHTML = s;
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <section id="id1"></section>
+
+<script>
+
+    // Перебор for .. in
+
+    let menu = {
+        width: 500,
+        height: 300,
+        title: "Menu",
+        fontS: 28
+    }
+
+    // let menu = [
+    //    500,
+    //     300,
+    //     "Menu",
+    //     28
+    // ]
+
+//     let count=0;
+
+//     for (let key in menu) {
+// alert(`Свойство: ${key}; Значение: ${menu[key]}`); 
+// count++
+// }
+
+// alert(`Всего свойств у объекта: ${count}`);
+
+// Использование объекта для верстки
+// myDiv = `<p style="width: ${menu[0]}px;
+//          text-align: center; font-size: 
+//          ${menu[3]}px">${menu[2]}</p>
+//          <div style="width: ${menu[0]}px; 
+//          height: ${menu[1]}px; 
+//          background: yellow"></div>`;
+//     id1.innerHTML = myDiv;
+
+    myDiv = `<p style="width: ${menu.width}px;
+         text-align: center; font-size: 
+         ${menu.fontS}px">${menu.title}</p>
+         <div style="width: ${menu.width}px; 
+         height: ${menu.height}px; 
+         background: yellow"></div>`;
+    id1.innerHTML = myDiv;
+
+</script>
+
+</body>
+</html>
