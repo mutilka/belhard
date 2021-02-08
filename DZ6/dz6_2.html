@@ -55,7 +55,7 @@
 let pictures = {
             imgSrc1: "im/red.jpg",
             imgName1: "Красный костел",
-            imgDesc2: "В храме святого Симеона и святой Елены находится полномасштабная копия Туринской Плащаницы.",
+            imgDesc1: "В храме святого Симеона и святой Елены находится полномасштабная копия Туринской Плащаницы.",
             imgSrc2: "im/troi.jpg",
             imgName2: "Троицкое предместье",
             imgDesc2: "Троицкое предместье — исторический район города Минска, расположенный в северо-восточной части исторического центра на левом берегу реки Свислочь.",
@@ -78,37 +78,33 @@ let pictures = {
         // let src1 = pictures.imgSrc1; Почему так не работает??
         let src1 = JSON.stringify(pictures.imgSrc1);
         let fig1 = pictures.imgName1;
-        let imgDesc1 = pictures.imgDesc2;
-
-        
+        let imgDesc1 = pictures.imgDesc1;
         alert(src1);
 
-        // let src2 = pictures.imgSrc2;
-        let src2 = JSON.stringify(pictures.imgSrc2);
-        let fig2 = (pictures.imgName2);
+        let src2 = pictures.imgSrc2;
+        let fig2 = pictures.imgName2;
         let imgDesc2 = pictures.imgDesc2;
         alert(src2);
 
-        // let src3 = (pictures.imgSrc3);
-        let src3 = JSON.stringify(pictures.imgSrc3);
-        let fig3 = (pictures.imgName3);
+        let src3 = pictures.imgSrc3;
+        let fig3 = pictures.imgName3;
         let imgDesc3 = pictures.imgDesc3;
         alert(src3);
 
 
-        function bigPic(p) {
-            let s1 = `<img onclick=" big.innerHTML = ''" src=${p} width="100%" height="100%"><figcaption>${imgDesc1}</figcaption>`;
+        function bigPic(p, m) {
+            let s1 = `<img onclick=" big.innerHTML = ''" src=${p} width="100%" height="100%"><figcaption>${m}</figcaption>`;
             big.innerHTML = s1;
         }
 
-        div1.innerHTML = `<figure><img onclick=bigPic(${src1}) src=${src1}><figcaption>${fig1}</figcaption></figure>
-                            <figure><img onclick=bigPic(${src2}) src=${src2}><figcaption>${fig2}</figcaption></figure>
-                            <figure><img onclick='bigPic(${src3})' src=${src3}><figcaption>${fig3}</figcaption></figure>`;
+        div1.innerHTML = `<figure><img onclick=bigPic(${src1},imgDesc1) src=${src1}><figcaption>${fig1}</figcaption></figure>
+                            <figure><img onclick=bigPic(src2,imgDesc2) src=${src2}><figcaption>${fig2}</figcaption></figure>
+                            <figure><img onclick='bigPic(src3,imgDesc3)' src=${src3}><figcaption>${fig3}</figcaption></figure>`;
                             
 
         
 
-        // bSrc1 = bigPic(src1);
+        // bSrc1 = bigPic(src1,imgDesc1);
         // big.innerHTML = s1;
 
 
