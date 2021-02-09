@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<script>
+
+
+    let a = [0.5,2,2.5,1,0,0.7];
+    let c = [];
+    let d = 0;    
+
+    function newArr(arr) {
+        let res = 0;
+
+        for (i=0; i<arr.length; i++) {
+            res = Math.sqrt(arr[i]+5);
+            c[i] = res;
+            console.log(res);
+            console.log(c);
+        }  
+    }
+
+    newArr(a);
+
+    alert(a);
+    alert(c);
+
+    for (k=0; k<c.length; k++) {
+        if (k == 0) {
+
+            b = c[k]; 
+
+        } else {
+        
+            d += c[k]/(+k+1);}
+
+            // alert(`"ck${k}:" ${c[k]}`);
+            // alert(`"d:" ${d}`);
+        
+
+    }alert(d+b);
+
+
+
+
+</script>
+
+
+</body>
+</html>
