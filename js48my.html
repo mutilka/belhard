@@ -6,8 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body onload="sayHello()">
     
+    <p id="p1"></p>
+    
+     <h2 onclick="this.innerHTML='Привет!'">Нажми меня</h2> <!-- this ссылается сам на себя -->
+     <h2 onclick="changeText(this)">Нажми меня</h2>
+
+     <p>Введите текст: <input id="text"></p>
+     <button onclick="message()">И нажмите!</button>
+
+
 
     <script>
 
@@ -15,9 +24,24 @@
 
         // onload Браузер завершил загрузку страницы
         // onclick Пользователь нажал мышкой на HTML элемент
-        // onmouseover Пользователь навел мыш на HTML элемент
+        // onmouseover Пользователь навел мышь на HTML элемент
+        // onmouseout Пользователь вывел мышь за пределы HTML элемента
+        // onchange HTML элемент был изменен
+
+
+        function sayHello() {
+            p1.innerHTML = "Hello!";
+        }
         
-        
+
+        function changeText(id) {
+            id.innerHTML = "Привет из функции";
+        }
+
+        function message() {
+            alert(`Вы ввели${text.value}`);                
+        }
+
 
 
     </script>

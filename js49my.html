@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <img src="images/summer.jpg" alt="" onmouseover="text(b)">
+    <p id="p1"></p>
+
+    <script>
+
+        // onmouseover onmouseout
+
+       let b = "Текст";
+       let s = "";
+
+        
+        function text() {
+
+            s = b;
+            alert(b);
+            
+
+        }
+
+        p1.innerHTML = s;
+
+
+
+    </script>
+
+    <input type="text" id="fname" placeholder="Введите ID" onchange="upperCase()">
+
+    <script>
+        function upperCase() {
+            alert('change');
+            fname.value = fname.value.toUpperCase();
+        }
+
+    </script>
+
+    
+</body>
+</html>
