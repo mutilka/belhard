@@ -8,10 +8,46 @@
 </head>
 <body>
 
+    <!-- <input type="button" id="elem" value="Нажми на меня" onclick="handler1(),handler2()"> -->
+    
+
+    <!-- onclick="handler1(),handler2() Не нужен при addEventListener -->
+
     <input type="button" id="elem" value="Нажми на меня">
 
     <p id="elem1" style="width: 200px">Наведи на меня</p>
 
+    <script>
+
+        function handler1() {
+            alert("Привет!");
+        }
+
+        function handler2() {
+            alert("Еще раз привет!");
+        }
+
+        function say() {
+            elem1.innerHTML = `Приставка on не используется в событиях для addEventListener`;
+        }
+
+        function doColor () {
+            document.body.style.background = "magenta";
+            document.body.style.color = "white";
+            document.body.style.fontSize = "1.5em"
+        }
+
+        elem1.addEventListener('mouseover', say);
+        elem1.addEventListener('mouseover', doColor);
+
+
+        elem.addEventListener('click', handler1);
+        elem.addEventListener('click', handler2);
+
+
+    </script>
+
+    <!-- <p id="elem1" style="background-color: magenta;"></p> -->
     
 </body>
 </html>
