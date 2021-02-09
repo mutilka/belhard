@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!-- <script>
+// Квадрат суммы
+        let b = [0.7,6,-7,0.9,-0.2,1];
+        let c = 5.3;
+        let s = 0;
+        let sd = 0;
+        let d = 0;
+
+        for (i=0; i<=b.length; i++) {
+// Выяисляем сумму целых чисел
+            if (b[i]%2 == 0) {
+
+                s += b[i]-1;
+// Вычисляем сумму дробных чисел
+            } else if (b[i]%0.2 == 0) {
+
+                sd += b[i]-1;
+            }
+// Итого
+            } ssd = s+sd; 
+            alert(ssd);
+
+        d = c*ssd*ssd;
+        alert(d);
+
+    </script> -->
+
+<script>
+// Сумма квадратов
+    let b = [0.7,6,-7,0.9,-0.2,1];
+    let c = 5.3;
+    let s = 0;
+    let sd = 0;
+    let d = 0;
+
+    for (i=0; i<=b.length; i++) {
+// Выяисляем сумму целых чисел
+        if (b[i]%2 == 0) {
+
+            s += Math.pow((b[i]-1), 2);
+// Вычисляем сумму дробных чисел
+        } else if (b[i]%0.2 == 0) {
+
+            sd += Math.pow((b[i]-1), 2);
+        }
+// Итого
+        } ssd = s+sd; 
+        alert(ssd);
+
+    d = c*ssd;
+    alert(d);
+
+</script>
+
+
+
+</body>
+</html>
