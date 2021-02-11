@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- onclick="handler1(), handler2()"  --> 
+    <input type="button" id="elem"
+   value="Нажми на меня">
+
+    <p id="elem1" style="width: 200px">
+        Наведи на меня</p>
+
+    <script>
+
+        function handler1() {
+            alert('Привет!');
+        }
+        function handler2() {
+            alert('Еще раз Привет!');
+        }
+
+        function say() {
+            elem1.innerHTML = `Приставка "on" не 
+            используется в собятиях для addEventListener`;
+        }
+
+        function doColor() {
+    document.body.style.background = "magenta";
+    document.body.style.color = "white";
+    document.body.style.fontSize = "1.5em";
+
+    }
+
+    elem1.addEventListener('mouseover', say);   
+    elem1.addEventListener('mouseover', doColor);
+
+    elem.addEventListener('click',handler1);   
+    elem.addEventListener('click',handler2);
+
+
+    </script>    
+
+</body>
+</html>
