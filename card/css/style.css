@@ -52,10 +52,12 @@ body {
 
 .stock {
     width: 104px;
-    height: 78px; /* 78 */
+    height: 78px;
     margin-top: 10px;
     z-index: 2;
-    position: absolute;
+    position: relative;
+    top: 320px;
+    left: -80px;
 }
 
 .title1 {
