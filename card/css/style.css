@@ -2,9 +2,9 @@
 
 
 
-/* #cards, .card, .fl, .title1, .title2, .title3, .title4 {
+#cards, .card, .fl, .title1, .title2, .title3, .title4, .stock, .title5 {
     border: 1px solid black;
-} */
+}
 
 body {
     font-family: 'Oswald', sans-serif;
@@ -32,10 +32,30 @@ body {
     
 }
 
+.title5 {
+    width: 280px;
+    height: 420px;
+
+    display: flex;
+    /* flex-wrap: wrap; заворачиваем на новую строку */
+    align-content: center;
+    justify-content: space-around;
+}
+
 .fl {
     width: 280px;
     height: 420px;
     margin-top: 10px;
+    position: absolute;
+    z-index: 1;
+}
+
+.stock {
+    width: 104px;
+    height: 78px; /* 78 */
+    margin-top: 10px;
+    z-index: 2;
+    position: absolute;
 }
 
 .title1 {
