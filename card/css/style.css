@@ -32,25 +32,38 @@ body {
     
 }
 
-.title5 {
+/* .title5 {
     width: 280px;
     height: 420px;
 
     display: flex;
-    /* flex-wrap: wrap; заворачиваем на новую строку */
+    flex-wrap: wrap;
     align-content: center;
     justify-content: space-around;
-}
+} */
 
 .fl {
     width: 280px;
     height: 420px;
     margin-top: 10px;
-    position: absolute;
+    /* position: absolute; */
     z-index: 1;
 }
 
-.stock {
+.fl img:nth-child(2) {
+    position: relative;
+    top: -120px;
+    left: 10px;
+    visibility: hidden;
+}
+
+.fl img:nth-child(3) {
+    position: relative;
+    top: -310px;
+    left: -10px;
+}
+
+/* .stock {
     width: 104px;
     height: 78px;
     margin-top: 10px;
@@ -58,7 +71,7 @@ body {
     position: relative;
     top: 320px;
     left: -80px;
-}
+} */
 
 .title1 {
     width: 280px;

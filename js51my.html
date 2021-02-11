@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+ /* Переменные */
+        :root {
+            --myFamilly: Courier;
+            --myColor: #00f;
+            --brd: 3px dashed var(--myColor);
+        }
+
+
+        h1 {
+            color: red;
+            font-family: var(--myFamilly);
+        }
+
+        .myClass1 {
+            color: blue;
+            font-family: var(--myFamilly);
+
+        }
+
+        .myBorder {
+            color: magenta;
+            border: var(--brd);
+        } 
+
+        #id1 {
+            color: yellow;
+        }
+
+        a:hover {
+            color: brown;
+        }
+
+        #id1:active { /* когда держешь мышку */
+            color: coral;
+        }
+
+        .myBorder::after {
+            content: "Добавочный текст";
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li::before {
+            content: "\2615"; /*Спецсимволы HTML*/
+        }
+
+        
+        .myClass1, #id1 {
+            font-size: 22px;
+        }
+
+
+
+    </style>
+
+</head>
+
+
+
+<body>
+    
+<h1>Заголовок 1</h1>
+<p class="myClass1 myBorder">Параграф 1</p>
+
+<h2 class="myClass1">Заголовок 2</h2>
+<p id="id1">Параграф 2</p>
+
+
+<a href="#">Ссылка 1</a>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+
+
+
+
+</body>
+</html>

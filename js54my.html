@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    /*Универсальный селдектор * */
+    * {
+        font-family: arial;
+    }
+
+    div * { /*  * вначале подразумевается но не ставится */
+        border: 1px solid red;
+    }
+
+    img {
+        animation: myAnim 3s;
+    }
+
+    @keyframes myAnim {
+        from { /* 0% */
+            opacity: .5;
+        }
+
+        20%, 40%, 50% {
+            transform: rotate(720deg) scale(0.5, 0.5);
+        }
+
+        to { /* 100% */
+            transform: rotate(-720deg) scale(1, 1);
+            opacity: 1;
+        }
+    }
+
+</style>
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+    <div>
+        <h1>Заголовок</h1>
+        <ul>
+            <li>Первое</li>
+            <li>Второе</li>
+        </ul>
+        <img src="images/2.jpg" alt="">
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
