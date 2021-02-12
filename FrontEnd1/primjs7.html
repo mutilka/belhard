@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS7</title>
+
+</head>
+
+<body onload="prog1()">
+    
+<script>
+
+    function ff (k) {
+        for (i = 1; i<=k; i++) {
+            myFack = 1;
+            myFack = myFack*i;
+        } return myFack;
+    }
+
+    function prog1 () {
+        M = parseFloat(prompt("m"));
+        N = parseFloat(prompt("n"));
+        C = (ff(M)+ff(N))/ff(M+1);
+        alert(C);
+    }
+
+
+
+
+</script>
+
+
+</body>
+</html>

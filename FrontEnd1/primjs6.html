@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Тиха украинская ночь. Прозрачно небо. Звезды блещут.</h1>
+
+    <button onclick="setColor()">Нажми и поменяй цвет</button>
+
+<script>
+    
+        function setColor() {
+            let cfg = ['red', 'blue', 'green', 'snow'];
+            let cbg = ['burlywood', 'crimson', 'coral'];
+
+            fg = Math.floor(Math.random()*cfg.length);
+            bg = Math.floor(Math.random()*cbg.length);
+            // alert(fg);
+            // alert(bg);
+
+            document.fgColor = cfg[fg];
+            document.bgColor = cbg[bg];
+
+        }
+        // alert(setColor());
+
+    </script>
+
+
+</body>
+</html>
