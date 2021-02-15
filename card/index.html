@@ -59,11 +59,11 @@
         
         card = {
 
-            cardName1: "Тайная жизнь",
-            cardName2: "домашних животных 2",
+            cardName1: ["Тайная жизнь", "История игрушек 4", "Фердинанд"],
+            cardName2: ["домашних животных 2", "Приключения Вилкинса"],
             cost: 17,
             currency: "руб.",
-            file: "pets.jpg",
+            file: ["pets.jpg", "ferd.jpg", "toy4.jpg"],
             type: "type.png",
             sales: true,
             rating: 4,
@@ -118,7 +118,7 @@
 
 
                 <div class="fl">
-                <img src="images/${card.file}">
+                <img src="images/${card.file[0]}">
                 
                 <img src="images/sales.png">
                 <img src="images/type.png">
