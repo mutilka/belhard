@@ -60,8 +60,8 @@
         card = {
 
             cardName1: ["Тайная жизнь", "История игрушек 4", "Фердинанд"],
-            cardName2: ["домашних животных 2", "Приключения Вилкинса"],
-            cost: 17,
+            cardName2: ["домашних животных 2", "Приключения Вилкинса", "Побег из коровника"],
+            cost: [17, 60, 40],
             currency: "руб.",
             file: ["pets.jpg", "ferd.jpg", "toy4.jpg"],
             type: "type.png",
@@ -73,8 +73,14 @@
 
         // Полная стоимость
 
-        let fullCost = `${card.cost},00 ${card.currency}`;
+        // let fullCost = `${card.cost[1]},00 ${card.currency}`;
         // alert(fullCost);
+
+        function fc(k) {
+            let fullCost = '';
+            fullCost = `${card.cost[k]},00 ${card.currency}`;
+            return fullCost;
+        }
 
         // Стоимость со скидкой
 
@@ -84,10 +90,31 @@
         // // alert(saleCost);
 
         // Округляем до 2-х знаков и меняем "." на ","
-        let cost1 = 0;
-        cost1 = card.cost*.9; // округлить правильно!! С остатком!!
-        let saleCost = `${cost1.toFixed(2).replace('.', ',')} ${card.currency}`;
+        // let cost1 = 0;
+        // cost1 = card.cost[1]*.9;
+        // let saleCost = `${cost1.toFixed(2).replace('.', ',')} ${card.currency}`;
         // alert(saleCost);
+
+        // Функция подсчета цены со скидкой
+
+        function sc(k) {
+            let saleCost = '';
+            let cost1 = '';
+            cost1 = card.cost[k]*.9;
+            saleCost = `${cost1.toFixed(2).replace('.', ',')} ${card.currency}`;
+            if (card.sales == false) {
+                noCost = '';
+            } else noCost = `<div>${saleCost}</div>`;
+            return noCost;
+        }
+
+                // Вывод цены со скидкой
+            // if (card.sales == false) {
+            //     noCost = '';
+            // } else noCost = `<div>${saleCost}</div>`;
+
+
+
 
 
         // Расчет рейтинга
@@ -104,21 +131,18 @@
 
             // alert(st);
 
-        // Вывод цены со скидкой
-            if (card.sales == false) {
-                noCost = '';
-            } else noCost = `<div>${saleCost}</div>`;
-
 
         //  Вывод итоговой строки
 
-        let s = `
+        let s = '';
+        for (i=1; i<=card.file.length; i++) {
+        s += `
 
         <div class="card">
 
 
                 <div class="fl">
-                <img src="images/${card.file[0]}">
+                <img src="images/${card.file[i-1]}">
                 
                 <img src="images/sales.png">
                 <img src="images/type.png">
@@ -127,14 +151,14 @@
 
 
             <div class="title1">
-                <div>${card.cardName1}</div>
-                <div>${card.cardName2}</div>
+                <div>${card.cardName1[i-1]}</div>
+                <div>${card.cardName2[i-1]}</div>
             </div>
 
 
             <div class="title2">
-                ${noCost}
-                <div>${fullCost}</div>
+                ${sc(i-1)}
+                <div>${fc(i-1)}</div>
             </div>
 
             <div class="title3">
@@ -149,6 +173,7 @@
         </div>
 
     `
+        }
 
     // 
         cards.innerHTML = s;
