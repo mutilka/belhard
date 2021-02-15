@@ -78,10 +78,17 @@
 
         // Стоимость со скидкой
 
+        // let cost1 = 0;
+        // cost1 = card.cost*.9; // округлить правильно!! С остатком!!
+        // let saleCost = `${Math.floor(cost1)},00 ${card.currency}`;
+        // // alert(saleCost);
+
+        // Округляем до 2-х знаков и меняем "." на ","
         let cost1 = 0;
         cost1 = card.cost*.9; // округлить правильно!! С остатком!!
-        let saleCost = `${Math.floor(cost1)},00 ${card.currency}`;
-        // alert(saleCost);
+        let saleCost = `${cost1.toFixed(2).replace('.', ',')} ${card.currency}`;
+        alert(saleCost);
+
 
         // Расчет рейтинга
 
@@ -101,6 +108,9 @@
             if (card.sales == false) {
                 noCost = '';
             } else noCost = `<div>${saleCost}</div>`;
+
+
+        //  Вывод итоговой строки
 
         let s = `
 
