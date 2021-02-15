@@ -37,6 +37,21 @@ body {
     margin-top: 10px;
 }
 
+.fl img:nth-child(2) {
+    position: relative;
+    top: -120px;
+    left: 10px;
+    visibility: hidden;
+}
+
+.fl img:nth-child(3) {
+    position: relative;
+    top: -310px;
+    left: -15px;
+}
+
+
+
 .title1 {
     width: 280px;
     height: 75px; 

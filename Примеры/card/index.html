@@ -13,9 +13,12 @@
 <body>
     
     <div id="cards">
-        <div class="card">
-        <div class="fl"><img src="images/card.jpg" 
-            alt=""></div>
+        <!-- <div class="card">
+        <div class="fl">
+        <img src="images/card.jpg" alt="">
+        <img src="images/sales.png" alt="">
+        <img src="images/type.png" alt="">
+        </div>
          <div class="title1">
              <div>Тайная жизнь</div>
              <div>домашних животных 2</div>
@@ -33,14 +36,85 @@
          </div>
 
          <div class="title4">
-             <img src="images/button.jpg" alt="">
+             <img src="images/order.jpg" alt="">
+         </div>
+
+        </div> -->
+
+    </div>
+
+<script>
+
+    card = {
+        cardName1: "Тайная жизнь",
+        cardName2: "домашних животных 2",
+        cost: 17,
+        currency: "руб.",
+        file: "card.jpg",
+        type: "type.png",
+        sales: true,
+        rating: 4,
+        but: "order.jpg"
+    }
+
+    // Полная стоимость
+    let fullCost = `${card.cost},00 ${card.currency}`;
+    // alert(fullCost);
+
+    // Расчет стоимости по акции
+    let cost1 = 0;
+    cost1 = card.cost * .9;
+
+    let saleCost = `${Math.floor(cost1)},00 ${card.currency}`;
+    // alert(saleCost);
+
+    // Расчет рейтинга
+    let st = '';
+        for (i=1; i<=card.rating; i++) {
+           st += '<span class="material-icons">star</span>';  
+        }
+        st += '<span class="material-icons">star_border</span>';
+
+        // alert(st);
+
+    let r ="";
+    if (card.sales)  r =`<div>${saleCost}</div>`;
+
+
+    let s = `
+    <div class="card">
+        <div class="fl">
+        <img src="images/${card.file}" alt="">
+        <img src="images/sales.png" alt="">
+        <img src="images/type.png" alt="">
+            </div>
+         <div class="title1">
+             <div>${card.cardName1}</div>
+             <div>${card.cardName2}</div>
+         </div>  
+         <div class="title2">
+             ${r}
+             <div>${fullCost}</div>
+         </div>
+         <div class="title3">
+            ${st}
+         </div>
+
+         <div class="title4">
+             <img src="images/${card.but}" alt="">
          </div>
 
         </div>
+    `;
+   
+    cards.innerHTML = s;
+    if (card.sales) {
+    document.images[1].style.visibility = 'visible';
 
+   } 
 
+</script>
 
-    </div>
 
 </body>
 </html>
