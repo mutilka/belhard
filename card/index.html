@@ -66,7 +66,8 @@
             file: ["pets.jpg", "ferd.jpg", "toy4.jpg"],
             type: "type.png",
             sales: true,
-            rating: 10,
+            rating: [0, 1, 2],
+            maxrating: 5,
             but: "order.jpg"
 
         }
@@ -97,10 +98,10 @@
 
         // Функция подсчета цены со скидкой
 
-        function sc(k) {
+        function sc(l) {
             let saleCost = '';
             let cost1 = '';
-            cost1 = card.cost[k]*.9;
+            cost1 = card.cost[l]*.9;
             saleCost = `${cost1.toFixed(2).replace('.', ',')} ${card.currency}`;
             if (card.sales == false) {
                 noCost = '';
@@ -119,20 +120,46 @@
 
         // Расчет рейтинга
 
-        let st = '';
+        // let st = '';
 
-            if (card.rating == 0) {
-                for (i=1; i<=5; i++) {
+        //     if (card.rating[2] == 0) {
+        //         for (i=1; i<=card.maxrating; i++) {
+        //         st += '<span class="material-icons">star_border</span>';
+        //         }  
+        //     } else {
+        //     for (i=1; i<=card.rating[2]; i++) {
+        //      st += '<span class="material-icons">star</span>';
+
+        //     }
+        //     for (i=1; i<=(card.maxrating-card.rating[2]); i++) {
+        //             st += '<span class="material-icons">star_border</span>';
+        //         }
+
+        //     }
+            // alert(st);
+
+        // Функция расчета рейтинга
+
+        function fst(m) {
+            let st = '';
+                        if (card.rating[m] == 0) {
+                for (j=1; j<=card.maxrating; j++) {
                 st += '<span class="material-icons">star_border</span>';
-                }  
+                }  return st;
             } else {
-            for (i=1; i<=card.rating; i++) {
-             st += '<span class="material-icons">star</span>'; 
-            }
+            for (j=1; j<=card.rating[m]; j++) {
+             st += '<span class="material-icons">star</span>';
 
+            } 
+            for (j=1; j<=(card.maxrating-card.rating[m]); j++) {
+                    st += '<span class="material-icons">star_border</span>';
+                } 
+
+            } return st;
         }
 
-            // alert(st);
+
+            
 
 
         //  Вывод итоговой строки
@@ -165,7 +192,7 @@
             </div>
 
             <div class="title3">
-                ${st}
+                ${fst(i-1)}
             </div>
 
             <div class="title4">
