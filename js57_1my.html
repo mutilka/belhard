@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+
+    <style>
+
+    section {
+        width: 550px;
+        height: 400px;
+        margin: 0 auto;
+        transition: 0.3s;
+    }
+
+    section:hover {
+        filter: brightness(80%);
+    }
+
+    div {
+        position: relative;
+        width: 70px;
+        /* border: solid black; */
+    }
+
+    .material-icons {
+        font-size: 70px;
+        color: blanchedalmond;
+    }
+
+    .material-icons:hover {
+        transition: 1s;
+        color: aqua;
+    }
+
+    #prev {
+        top: -250px;
+    }
+
+    #next {
+        top: -330px;
+        left: 475px;
+    }
+
+    </style>
+
+
+</head>
+<body>
+    
+
+    <section id="sec" onmouseout="timerId = setTimeout(changePic, 2000);">
+
+        <a id="h1" href="https://www.belarus.by/ru//"><img id="pic" src="images/img1b.jpg" alt=""></a>
+
+        <div id="prev"><a href="javascript:bc()"><span class="material-icons">navigate_before</span></a></div>
+        <div id="next"><a href="javascript:fr()"><span class="material-icons">navigate_next</span></a></div>
+
+    </section>
+
+
+    <script>
+
+        let n = 1;
+        let p = 6;
+
+        // массив:
+        to = ['https://ru.wikipedia.org/', 'https://airport.by/', 'https://gorshochek.by/', 'http://beegood.by/', 'https://www.hotelminsk.by/', 'https://www.ya.ru'];
+
+
+        function fr() {
+            // alert('hello');
+            if (n == 6) n = 1
+            else {pic.src = `images/img${n}b.jpg`;
+            h1.href = to[n-1];
+            n++;
+            console.log(pic.src);
+            }
+
+        }
+
+        function bc() {
+            if (n == 1) n = 6
+            else {pic.src = `images/img${n}b.jpg`;
+            h1.href = to[n-1];
+            n--;
+            console.log(pic.src);
+            }
+
+        }
+
+
+        function changePic() {
+            if (n > p) n=1;
+            pic.src = `images/img${n}b.jpg`;
+            h1.href = to[n-1];
+            n++;
+            timerId = setTimeout(changePic, 2000);
+        }
+
+        function stop() {
+        clearTimeout(timerId);
+        }
+
+        addEventListener('load', changePic);
+        sec.addEventListener('mouseover', stop);
+        // sec.addEventListener('mouseout', changePic); не работает
+
+    </script>
+
+
+</body>
+</html>
