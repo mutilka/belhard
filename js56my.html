@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <body onload="changePic()"> -->
+<body>
+    
+    <a id="h1" href="#"><img id="pic" src="images/minsk1.jpg" alt=""></a>
+
+
+
+    <script>
+
+        let n = 1;
+        let p = 2;
+
+        to = ['https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D1%81%D0%BA', 'https://airport.by/'];
+
+        function changePic() {
+            if (n > p) n=1;
+            pic.src = `images/minsk${n}.jpg`;
+            h1.href = to[n-1];
+            n++;
+            setTimeout(changePic, 2000);
+        }
+
+        addEventListener('load', changePic);
+        // document.body.addEventListener('load', changePic());
+
+
+    </script>
+
+
+</body>
+</html>

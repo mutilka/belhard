@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Задание! Повесить Пуск/Стоп на одну кнопку см 55_1 -->
+    
+    <p id="p1"></p>
+    <button id="b1">Запустить таймер</button>
+    <button id="b2">Остановить таймер</button>
+
+
+    <!-- <script>
+
+        function func() {
+            alert('Привет!');
+        }
+
+        // setTimeout('func()', 1000);
+
+        // Второй способ вызова
+
+        setTimeout(func, 1000);
+
+    </script> -->
+
+    <!-- <script>
+
+        let i = 0, t = 10;
+
+        function timer() {
+            if (i>t) i = 0;
+            p1.innerHTML = `Таймер до ${t}: ${i}`;
+            i++;
+            setTimeout(timer, 1000);
+        }
+
+    </script> -->
+
+<script>
+
+    // let i = 'Привет', t = 10;
+
+    function timer() {
+        // if (i>0) i = 0;
+        p1.innerHTML += ` Привет`;
+        // i++;
+       timerId = setTimeout(timer, 1000);
+       console.log(timerId);
+    }
+
+    b2.addEventListener('click', stop);
+
+    b1.addEventListener('click', timer);
+
+    function stop() {
+        clearTimeout(timerId);
+        
+    }
+
+</script>
+
+
+</body>
+</html>
