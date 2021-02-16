@@ -122,9 +122,7 @@
         let st = '';
 
             for (i=1; i<=card.rating; i++) {
-
              st += '<span class="material-icons">star</span>'; 
-
             }
 
             st += '<span class="material-icons">star_border</span>';
@@ -175,15 +173,11 @@
     `
         }
 
-    // 
         cards.innerHTML = s;
-        
+
+   // Отображение картинки "Акция" после формирования финальной строки
         if (card.sales == true) {
-            
             document.images[1].style.visibility = 'visible';
-
-            
-
         }
 
     </script>
