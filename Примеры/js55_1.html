@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- <script>
+        function func() {
+            alert('Привет!');
+        }
+
+        setTimeout(func, 1000);
+
+    </script> -->
+
+    <p id="p1"></p>
+    <button id="b1">Запустить таймер</button>
+    <!-- <button id="b2">Остановить таймер</button> -->
+
+
+    <script>
+
+        // let i=0, t=10;
+
+
+
+        function timer() {
+            b1.innerHTML = 'Остановить таймер';
+            // if (i>t) i = 0;
+            p1.innerHTML += `Привет `;
+            // i++;
+
+           timerId = setTimeout(timer, 1000);
+           console.log(timerId);
+
+        }
+
+        function stop() {
+            clearTimeout(timerId);
+            b1.innerHTML = 'Запустить таймер';
+        }
+
+
+        if (b1.innerHTML == "Запустить таймер") 
+        b1.addEventListener('click', timer);
+            else b1.addEventListener('click', stop);
+
+        // b2.addEventListener('click', stop);
+    </script>
+
+
+</body>
+</html>
