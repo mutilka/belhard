@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        
+        let str = '';
+        let pos_start = 0;
+        let pos_end = 0;
+        let start = 0;
+        let sl = '';
+
+        s = "https://www.belarus.by/ru/about-belarus/geography/minskcity";
+
+        pos_start = s.indexOf('/', 0); // Находит позацию символа
+        alert(pos_start);
+        sl = s.length;
+        start = pos_start + 2;
+        pos_end = s.indexOf('/', start);
+
+        str = s.substring(start,pos_end);
+
+        alert(str);
+
+
+        // indexOf(); Позиция символа в строке
+        // length Длина строки
+        // substring(); Копирует подстроку из строки (часть строки)
+
+        
+
+    </script>
+    
+</body>
+</html>
