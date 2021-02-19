@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <style>
+    section {
+        width: 550px;
+        height: 400px;
+        margin: 0 auto;
+        transition: .3s;
+        /* border: 1px solid blue; */
+    }
+
+    section:hover { filter: brightness(80%);}
+
+    div {
+        position: relative;
+        width: 70px;
+        /* border: solid black; */
+    }
+
+    .material-icons {
+       font-size: 70px; 
+       color: white;
+    }
+
+    #prev { top: -250px; }
+    #next { top: -330px; left: 475px;}
+
+    .material-icons:hover { transition: 1s; color: aqua; }
+
+    article {
+        height: 100px;
+        background: rgba(143, 188, 143, 0.507);
+        color: white;
+        position: relative;
+        top: -270px;
+    }
+
+    h1, p {
+        padding-left: 15px;
+    }
+    h1 { padding-top: 10px;}
+
+    a { text-decoration: none;}
+    a:link, a:visited, a:active { color: white}
+    a:hover { color: aquamarine }
+
+    h2 {
+        position: relative;
+        top: -360px;
+        left: 15px;
+        width: fit-content;
+        border: 1px solid white;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    </style>
+
+</head>
+<body>
+    
+<section id="sec" onmouseout="timerId = setTimeout(changePic, 2000)">
+    <a id="h1" href="https://www.belarus.by/ru/about-belarus/geography/minskcity">
+        <img id="pic" src="images/img1b.jpg" alt=""></a>
+
+<div id="prev"><a href="javascript:bc()"><span class="material-icons">
+    navigate_before</span></a></div>
+<div id="next"><a href="javascript:fr()"><span class="material-icons">
+        navigate_next</span></a></div>
+
+ <article>
+    <h1 id="t1">Заголовок слайда 1</h1>
+    <p id="t2"><a href="link1.html">Подзаголовок слайда 1</a></p>
+    <h2 id="t3"><a href="https://www.belarus.by/ru/about-belarus/geography/minskcity">www.belarus.by</a></h2>
+ </article>       
+
+</section>
+
+    <script>
+
+        let n=1, p=6;
+        to = ['https://www.belarus.by/ru/about-belarus/geography/minskcity',
+               'https://airport.by/','https://regnum.ru/foreign/eastern-europe/belarus.html',
+            'https://minsk.page/minsk/','https://www.hotelminsk.by/',
+        'https://42.tut.by/719082'];
+
+        to1 = [];
+        let str='', pos_start=0, 
+        pos_end=0, start=0;
+
+        for (i=0; i<to.length; i++) {
+        pos_start = to[i].indexOf('/',0);
+        start = pos_start+2;
+        pos_end = to[i].indexOf('/',start);
+        str = to[i].substring(start,pos_end);
+        
+        to1[i] = str;
+
+        }
+
+        function fr() {
+            // alert('hello');
+            if (n>=p) n=1 
+                else n++;
+               
+                changeElem();
+
+
+        }
+
+        function bc() { 
+            if (n==1) n=6
+               else n--;
+
+               changeElem();
+
+        }
+
+
+        function changePic() {
+            if (n>p) n=1;
+
+            changeElem();
+            
+            n++;
+            timerId = setTimeout(changePic, 2000);
+        }
+
+        function stop() {
+            clearTimeout(timerId);
+        }
+
+        function changeElem() {
+            pic.src=`images/img${n}b.jpg`;
+            h1.href= to[n-1];
+            t1.innerHTML = `Заголовок слайда ${n}`;
+            t2.innerHTML = `<a href="link${n}.html">Подзаголовок слайда ${n}</a>`;
+            t3.innerHTML = `<a href="${to[n-1]}">${to1[n-1]}</a>`;
+        }
+
+
+        addEventListener('load', changePic);
+sec.addEventListener('mouseover',stop);
+// sec.addEventListener('mouseout', changePic);
+
+    </script>
+
+
+</body>
+</html>

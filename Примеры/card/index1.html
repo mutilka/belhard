@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+    <div id="cards"></div>
+
+<script>
+
+    myCard = [
+
+    {
+        cardName1: "Тайная жизнь",
+        cardName2: "домашних животных 2",
+        cost: 17,
+        currency: "руб.",
+        file: "card.jpg",
+        type: "type.png",
+        sales: true,
+        rating: 4,
+        but: "order.jpg"
+    },
+
+    {
+        cardName1: "История игрушек 4",
+        cardName2: "Приключения Вилкинса",
+        cost: 16,
+        currency: "руб.",
+        file: "toy4.jpg",
+        type: "type.png",
+        sales: false,
+        rating: 4,
+        but: "order.jpg"
+    },
+
+    {
+        cardName1: "Фердинанд",
+        cardName2: "Побег из коровника",
+        cost: 18,
+        currency: "руб.",
+        file: "ferd.jpg",
+        type: "type.png",
+        sales: true,
+        rating: 4,
+        but: "order.jpg"
+    }
+
+];
+
+let s = '';
+    for (j=0; j<myCard.length; j++) {
+
+    // Полная стоимость
+    let fullCost = `${myCard[j].cost},00 ${myCard[j].currency}`;
+    // alert(fullCost);
+
+    // Расчет стоимости по акции
+    let cost1 = 0;
+    cost1 = myCard[j].cost * .9;
+
+    let saleCost = `${Math.floor(cost1)},00 ${myCard[j].currency}`;
+    // alert(saleCost);
+
+    // Расчет рейтинга
+    let st = '';
+        for (i=1; i<=myCard[j].rating; i++) {
+           st += '<span class="material-icons">star</span>';  
+        }
+        st += '<span class="material-icons">star_border</span>';
+
+        // alert(st);
+
+    let r ="";
+    if (myCard[j].sales)  r =`<div>${saleCost}</div>`;
+
+    let r1='';
+    if (myCard[j].sales) {
+        r1=`<img style="visibility: visible" 
+        src="images/sales.png" alt="">`;
+
+    } else r1 = `<img style="visibility: hidden" 
+        src="images/sales.png" alt="">`;
+
+    s += `
+    <div class="card">
+        <div class="fl">
+        <img src="images/${myCard[j].file}" alt="">
+        ${r1}
+        <img src="images/type.png" alt="">
+            </div>
+         <div class="title1">
+             <div>${myCard[j].cardName1}</div>
+             <div>${myCard[j].cardName2}</div>
+         </div>  
+         <div class="title2">
+             ${r}
+             <div>${fullCost}</div>
+         </div>
+         <div class="title3">
+            ${st}
+         </div>
+
+         <div class="title4">
+             <img src="images/${myCard[j].but}" alt="">
+         </div>
+
+        </div>
+    `;
+   
+    }
+
+    cards.innerHTML = s;
+
+</script>
+
+
+</body>
+</html>

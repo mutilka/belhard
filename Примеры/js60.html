@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <section id="findHere">
+        <a href="#">Текст 1</a>
+        <a href="#">Текст 2</a>
+        <a href="#">Текст 3</a>
+        <a href="#">Текст 4</a>
+        <a href="#">Текст 5</a>
+    </section>
+    <section>
+        <a href="#">Текст 6</a>
+        <a href="#">Текст 7</a>
+    </section>
+    <button id="but" onclick="change()">Изменить</button>
+
+    <script>
+
+        // getElementsByTagName() Выбор эл-тов 
+        // по имени тега
+
+        function change() {
+            // f = document.getElementById('findHere');
+            l = document.getElementsByTagName('a'); 
+            // l теперь массив
+
+            for (i=0; i<l.length; i++) {
+                l[i].href = `link${i+1}.html`;
+            }
+
+        }
+
+
+
+    </script>
+
+</body>
+</html>

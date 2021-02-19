@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- document -->
+
+    <!-- Коллекции:
+
+    - links;
+    - forms;
+    - images; -->
+
+<a href="link1.html"><img src="images/1.jpg"></a>
+<a href="link2.html"><img src="images/2.jpg"></a>
+<a href="link3.html"><img src="images/3.jpg"></a>
+
+<form action="#" name="form1"></form>
+<form action="#" name="form2"></form>
+<form action="#" name="form3"></form>
+
+
+<script>
+
+    for (i=0; i<3; i++) {
+        alert(`${document.images[i].src} ${document.links[i]} ${document.forms[i].name}`);
+    }
+
+</script>
+
+
+</body>
+</html>

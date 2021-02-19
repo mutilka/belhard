@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let str='', pos_start=0, 
+        pos_end=0, start=0;
+
+        // s = "https://www.belarus.by";
+        s = "https://www.belarus.by/ru/about-belarus/geography/minskcity";
+
+        // indexOf(); позиция символа
+        // length; длина строки
+        // substring(); копирует подстроку в строке
+
+        pos_start = s.indexOf('/',0); // 6
+        // alert(pos);
+        // sl = s.length;
+        start = pos_start+2;
+
+        pos_end = s.indexOf('/',start);
+
+
+        str = s.substring(start,pos_end);
+        alert(str);
+
+
+    </script>
+
+
+</body>
+</html>

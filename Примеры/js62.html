@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <style>
+
+        p:nth-child(even) {
+            color: red;
+        }
+
+    </style> -->
+
+</head>
+<body>
+    
+    <p>Абзац 1</p>
+    <p>Абзац 2</p>
+    <p>Абзац 3</p>
+    <p>Абзац 4</p>
+    <p>Абзац 5</p>
+    <p>Абзац 6</p>
+    <p>Абзац 7</p>
+    <p>Абзац 8</p>
+    <p>Абзац 9</p>
+    <p>Абзац 10</p>
+    <button id="but" onclick="change()">Изменить</button>
+
+
+    <script>
+
+        // querySelectorAll Выбор по селекторам CSS
+
+        function change() {
+
+let s1 = document.querySelectorAll(' p:nth-child(even)');
+
+for (i=0; i<s1.length; i++) {
+    s1[i].innerHTML = `Параграф ${i+1}`;
+    s1[i].style.cssText = `
+             border: 1px solid #f00;
+             background: blue;           
+             color: white;
+    `;
+}
+
+        }
+
+
+    </script>
+
+</body>
+</html>
