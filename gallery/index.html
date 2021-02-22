@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+    
+    <section id="picturesHere"></section>
+    <section id="bigPicture"></section>
+
+    <script>
+
+        let gallery = [
+            {
+            fname: 'red.jpg', 
+            sw: '300', 
+            descr: 'Красный костел', 
+            lnk: 'https://www.belarus.by/ru/travel/belarus-life/trinity-suburb',
+            title: 'Троицкое предместье — исторический район города Минска, расположенный в северо-восточной части исторического центра на левом берегу реки Свислочь.'    
+        },
+        {
+            fname: 'troi.jpg', 
+            sw: '300', 
+            descr: 'Троицкое предместье', 
+            lnk: 'https://msj.by/katolicheskie-xramy/krasnyj-kostel-v-minsk',
+            title: 'В храме святого Симеона и святой Елены находится полномасштабная копия Туринской Плащаницы.'    
+        },
+        {
+            fname: 'mir.jpg', 
+            sw: '300', 
+            descr: 'Мирский замок', 
+            lnk: 'https://mirzamak.by/',
+            title: 'Построенный в начале XVI в. магнатом Ю. И. Ильиничем замок стал первым частнособственническим замком на землях Белоруссии.'    
+        },
+
+        ];
+
+        s='';
+        for (i=0; i<gallery.length; i++) {
+
+            s += `
+            <div>
+                <img onclick="showPic('${gallery[i].fname}', 
+                '${gallery[i].title}')" 
+                src="images/${gallery[i].fname}" 
+                style="width: ${gallery[i].sw}px">
+                <p><a href="${gallery[i].lnk}">
+                    ${gallery[i].descr}</a></p>
+            </div>    
+         `;
+        };
+
+        picturesHere.innerHTML = s;
+
+        function showPic(p,t) {
+            bigPicture.innerHTML = `
+     <img src="images/${p}" onclick="bigPicture.innerHTML=''" style="width: 1000px">
+     <p>${t}</p>       
+            `;
+        }
+
+        find = document.getElementById('picturesHere');
+        p1 = find.getElementsByTagName('p');
+        a1 = find.getElementsByTagName('a');
+
+        for (j=0; j<p1.length; j++) {
+            p1[j].style.cssText = `
+                   font-size: 18pt;
+                   text-align: center;     
+            `;
+            a1[j].style.cssText = `
+                   text-decoration: none;
+                   color: blue;     
+            `;
+        }
+
+    </script>
+
+</body>
+</html>
