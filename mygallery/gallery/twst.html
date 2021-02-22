@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Документ без названия</title>
+<script>
+var arrImg = ["1.jpg","2.jpg","3.jpg","4.gif","5.jpg"];
+</script>
+</head>
+<body>
+<img src="1.jpg" style="width:200px; height:150px;" onMouseOver="
+    self = this, i = 0, 
+    ch = setInterval(function(){
+        i = i==arrImg.length-1?0: ++i;
+        var src = self.getAttribute('src');
+        self.setAttribute('src',arrImg[i]);
+    },500)
+" onMouseOut="clearInterval(ch);" />
+</body>
+</html>
