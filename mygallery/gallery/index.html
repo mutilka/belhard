@@ -10,7 +10,7 @@
 </head>
 <body>
     
-    <section id="picturesHere"></section>
+    <section id="picturesHere" onmouseover="slideShow()"></section>
     <section id="bigPicture"></section>
 
     <script>
@@ -21,14 +21,14 @@
             sw: '300', 
             descr: 'Красный костел', 
             lnk: 'https://www.belarus.by/ru/travel/belarus-life/trinity-suburb',
-            title: 'В храме святого Симеона и святой Елены находится полномасштабная копия Туринской Плащаницы.'    
+            title: 'Троицкое предместье — исторический район города Минска, расположенный в северо-восточной части исторического центра на левом берегу реки Свислочь.'    
         },
         {
             fname: 'troi.jpg', 
             sw: '300', 
             descr: 'Троицкое предместье', 
             lnk: 'https://msj.by/katolicheskie-xramy/krasnyj-kostel-v-minsk',
-            title: 'Троицкое предместье — исторический район города Минска, расположенный в северо-восточной части исторического центра на левом берегу реки Свислочь.'    
+            title: 'В храме святого Симеона и святой Елены находится полномасштабная копия Туринской Плащаницы.'    
         },
         {
             fname: 'mir.jpg', 
@@ -41,19 +41,31 @@
         ];
 
         s='';
-        for (i=0; i<gallery.length; i++) {
 
-            s += `
-            <div>
-                <img onclick="showPic('${gallery[i].fname}', 
-                '${gallery[i].title}')" 
-                src="images/${gallery[i].fname}" 
-                style="width: ${gallery[i].sw}px">
-                <p><a href="${gallery[i].lnk}">
-                    ${gallery[i].descr}</a></p>
-            </div>    
-         `;
+        
+        function slideShow() {
+
+            for (i=0; i<gallery.length; i++) {
+                s += `
+                <div>
+                    <img onclick="showPic('${gallery[i].fname}',
+                    '${gallery[i].title}')"
+                    src="images/${gallery[i].fname}"
+                    style="width: ${gallery[i].sw}px">
+                    <p><a href="${gallery[i].lnk}">${gallery[i].descr}</a></p>
+                </div>    
+            `; 
+            };
         };
+
+        // slideShow();
+
+
+
+        
+
+        
+
 
         picturesHere.innerHTML = s;
 
@@ -70,7 +82,7 @@
 
         for (j=0; j<p1.length; j++) {
             p1[j].style.cssText = `
-                   font-size: 10pt;
+                   font-size: 18pt;
                    text-align: center;     
             `;
             a1[j].style.cssText = `
@@ -78,6 +90,8 @@
                    color: blue;     
             `;
         }
+
+// setTimeout(slideShow, 1000);
 
     </script>
 
