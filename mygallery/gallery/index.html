@@ -15,11 +15,11 @@
 
     <script>
 
-        let i=1, p=3;
+        let i=1, p=3, n='';
 
         let gallery = [
             {
-            fname: 'red.jpg', 
+            fname: `red${n}.jpg`,
             sw: '300', 
             descr: 'Красный костел', 
             lnk: 'https://www.belarus.by/ru/travel/belarus-life/trinity-suburb',
@@ -45,11 +45,12 @@
         s='';
 
             function fr() {
-            // alert('hello');
-            if (i>=p) i=1 
-                else i++;
-               
+            alert('hello');
+            if (i>=p) {i=1;
+            } else {
+                i++;
                 slideShow();
+                }
         }
 
         function changePic() {
@@ -80,7 +81,11 @@
 
         };
 
-        // slideShow();
+
+                
+
+
+        slideShow();
 
 
 
