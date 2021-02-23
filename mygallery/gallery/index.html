@@ -52,7 +52,7 @@
             if (n>p) n=0;
 
             slideShow();
-            alert('!!')
+            // alert('!!')
             
             n++;
             timerId = setTimeout(changePic, 2000);
@@ -83,11 +83,30 @@
 
 
 
+            // function slideShow() {
+
+            //     for (i=0; i<gallery.length; i++) {        
+
+            //                 s += `
+            //                 <div>
+            //                     <img onclick="showPic('${gallery[i].fname[n]}',
+            //                     '${gallery[i].title}')"
+            //                     src="images/${gallery[i].fname[n]}"
+            //                     style="width: ${gallery[i].sw}px">
+            //                     <p><a href="${gallery[i].lnk}">${gallery[i].descr}</a></p>
+            //                 </div>    
+            //                 `;
+            //         };
+            // };
+
 
                     function slideShow() {
 
-            for (i=0; i<gallery.length; i++) {        
+            for (i=0; i<gallery.length; i++) {
 
+                n = '';
+               
+                    for (n=0; n<=p; n++) {
                         s += `
                         <div>
                             <img onclick="showPic('${gallery[i].fname[n]}',
@@ -97,11 +116,11 @@
                             <p><a href="${gallery[i].lnk}">${gallery[i].descr}</a></p>
                         </div>    
                     `;
+                    };  
 
+            }; return s
 
-            };
-
-            };
+        };
 
 
                 
@@ -139,8 +158,9 @@
 
         
 
-
-// picturesHere.addEventListener('onmouseover', changePic);
+// changePic();
+// picturesHere.addEventListener('onclick', changePic);
+// addEventListener('onclick', changePic);
 
     </script>
 
