@@ -15,8 +15,7 @@
 
     <script>
 
-        let n='';
-        let p = 2;
+        
 
 
 
@@ -45,22 +44,22 @@
 
         ];
 
-        s='';
+        let s='';
+        let n = 0;
+        let p = 2;
 
         function changePic() {
-
+            if (n>p) n=0;
 
             slideShow();
+            // alert('11')
             
-
-            timerId = setTimeout(changePic, 20000);
+            n++;
+            timerId = setTimeout(changePic, 2000);
         }
             
 
         function slideShow() {
-
-        
-
 
             for (i=0; i<gallery.length; i++) {
 
@@ -76,13 +75,13 @@
                             <p><a href="${gallery[i].lnk}">${gallery[i].descr}</a></p>
                         </div>    
                     `;
-                    } 
-            };
+                    };  
+            }; return s
 
-}
+        }
 
 
-changePic();
+    changePic();
     // slideShow();
 
         
@@ -110,8 +109,10 @@ changePic();
             `;
         }
 
+        
 
-        // addEventListener('load', fr);
+
+// picturesHere.addEventListener('onmouseover', changePic);
 
     </script>
 
