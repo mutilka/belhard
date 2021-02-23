@@ -15,25 +15,28 @@
 
     <script>
 
-        let i=1, p=3, n='';
+        let n='';
+        let p = 2;
+
+
 
         let gallery = [
             {
-            fname: `red${n}.jpg`,
+            fname: ['red.jpg', 'red1.jpg', 'red2.jpg'],
             sw: '300', 
             descr: 'Красный костел', 
             lnk: 'https://www.belarus.by/ru/travel/belarus-life/trinity-suburb',
             title: 'Троицкое предместье — исторический район города Минска, расположенный в северо-восточной части исторического центра на левом берегу реки Свислочь.'    
         },
         {
-            fname: 'troi.jpg', 
+            fname: ['troi.jpg', 'troi1.jpg', 'troi2.jpg'], 
             sw: '300', 
             descr: 'Троицкое предместье', 
             lnk: 'https://msj.by/katolicheskie-xramy/krasnyj-kostel-v-minsk',
             title: 'В храме святого Симеона и святой Елены находится полномасштабная копия Туринской Плащаницы.'    
         },
         {
-            fname: 'mir.jpg', 
+            fname: ['mir.jpg', 'mir1.jpg', 'mir2.jpg'],
             sw: '300', 
             descr: 'Мирский замок', 
             lnk: 'https://mirzamak.by/',
@@ -44,60 +47,45 @@
 
         s='';
 
-            function fr() {
-            alert('hello');
-            if (i>=p) {i=1;
-            } else {
-                i++;
-                slideShow();
-                }
-        }
-
         function changePic() {
-            if (i>p) i=1;
+
 
             slideShow();
             
-            i++;
-            timerId = setTimeout(changePic, 2000);
+
+            timerId = setTimeout(changePic, 20000);
         }
-
-
-        
-        function slideShow() {
             
 
+        function slideShow() {
+
+        
+
+
             for (i=0; i<gallery.length; i++) {
-                s += `
-                <div onmouseover="fr()">
-                    <img onclick="showPic('${gallery[i].fname}',
-                    '${gallery[i].title}')"
-                    src="images/${gallery[i].fname}"
-                    style="width: ${gallery[i].sw}px">
-                    <p><a href="${gallery[i].lnk}">${gallery[i].descr}</a></p>
-                </div>    
-            `; 
+
+                j = '';
+               
+                    for (j=0; j<=p; j++) {
+                        s += `
+                        <div>
+                            <img onclick="showPic('${gallery[i].fname[j]}',
+                            '${gallery[i].title}')"
+                            src="images/${gallery[i].fname[j]}"
+                            style="width: ${gallery[i].sw}px">
+                            <p><a href="${gallery[i].lnk}">${gallery[i].descr}</a></p>
+                        </div>    
+                    `;
+                    } 
             };
 
-        };
+}
 
 
-                
-
-
-        slideShow();
-
-
-
+changePic();
+    // slideShow();
 
         
-
-
-        
-
-        
-
-
         picturesHere.innerHTML = s;
 
         function showPic(p,t) {
@@ -123,7 +111,7 @@
         }
 
 
-        addEventListener('load', changePic);
+        // addEventListener('load', fr);
 
     </script>
 
