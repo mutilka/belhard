@@ -52,10 +52,10 @@
             if (n>p) n=0;
 
             slideShow();
-            // alert('11')
+            // alert('!!')
             
             n++;
-            timerId = setTimeout(changePic, 2000);
+            timerId = setTimeout(changePic, 1000);
         }
             
 
@@ -90,17 +90,17 @@
 
                 j = '';
             
-                    for (j=0; j<=p; j++) {
+
                         s += `
                         <div>
-                            <img onclick="showPic('${gallery[i].fname[j]}',
+                            <img onclick="showPic('${gallery[i].fname[n]}',
                             '${gallery[i].title}')"
-                            src="images/${gallery[i].fname[j]}"
+                            src="images/${gallery[i].fname[n]}"
                             style="width: ${gallery[i].sw}px">
                             <p><a href="${gallery[i].lnk}">${gallery[i].descr}</a></p>
                         </div>    
                     `;
-                    };  
+
 
             };
 
@@ -143,7 +143,7 @@
         
 
 
-// picturesHere.addEventListener('onmouseover', changePic);
+picturesHere.addEventListener('onmouseover', changePic);
 
     </script>
 
