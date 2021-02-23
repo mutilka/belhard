@@ -59,12 +59,37 @@
         }
             
 
-        function slideShow() {
+        // function slideShow() {
+
+        //     for (i=0; i<gallery.length; i++) {
+
+        //         j = '';
+               
+        //             for (j=0; j<=p; j++) {
+        //                 s += `
+        //                 <div>
+        //                     <img onclick="showPic('${gallery[i].fname[j]}',
+        //                     '${gallery[i].title}')"
+        //                     src="images/${gallery[i].fname[j]}"
+        //                     style="width: ${gallery[i].sw}px">
+        //                     <p><a href="${gallery[i].lnk}">${gallery[i].descr}</a></p>
+        //                 </div>    
+        //             `;
+        //             };  
+
+        //     }; return s
+
+        // };
+
+
+
+
+                    function slideShow() {
 
             for (i=0; i<gallery.length; i++) {
 
                 j = '';
-               
+            
                     for (j=0; j<=p; j++) {
                         s += `
                         <div>
@@ -76,9 +101,15 @@
                         </div>    
                     `;
                     };  
-            }; return s
 
-        }
+            };
+
+            };
+
+
+                
+
+
 
 
     changePic();
