@@ -8,7 +8,7 @@
 
 
 </head>
-<body>
+<body onload="drawPic()">
     
     <section id="picturesHere"></section>
     <section id="bigPicture"></section>
@@ -17,21 +17,21 @@
 
         let gallery = [
             {
-            fname: 'red.jpg', 
+            fname: ['red.jpg','red1.jpg','red2.jpg'], 
             sw: '300', 
             descr: 'Красный костел', 
             lnk: 'https://www.belarus.by/ru/travel/belarus-life/trinity-suburb',
             title: 'Троицкое предместье — исторический район города Минска, расположенный в северо-восточной части исторического центра на левом берегу реки Свислочь.'    
         },
         {
-            fname: 'troi.jpg', 
+            fname: ['troi.jpg','troi1.jpg','troi2.jpg'], 
             sw: '300', 
             descr: 'Троицкое предместье', 
             lnk: 'https://msj.by/katolicheskie-xramy/krasnyj-kostel-v-minsk',
             title: 'В храме святого Симеона и святой Елены находится полномасштабная копия Туринской Плащаницы.'    
         },
         {
-            fname: 'mir.jpg', 
+            fname: ['mir.jpg','mir1.jpg','mir2.jpg'], 
             sw: '300', 
             descr: 'Мирский замок', 
             lnk: 'https://mirzamak.by/',
@@ -40,22 +40,68 @@
 
         ];
 
+
+        function drawPic() {
+
         s='';
         for (i=0; i<gallery.length; i++) {
 
             s += `
-            <div>
-                <img onclick="showPic('${gallery[i].fname}', 
+            <div><div id="id${i}">
+                <img onclick="showPic('${gallery[i].fname[0]}', 
                 '${gallery[i].title}')" 
-                src="images/${gallery[i].fname}" 
+            onmouseover="timerId = setTimeout('roll(${i})',1000)"
+            onmouseout="clearTimeout(timerId)"
+                src="images/${gallery[i].fname[0]}" 
                 style="width: ${gallery[i].sw}px">
                 <p><a href="${gallery[i].lnk}">
                     ${gallery[i].descr}</a></p>
-            </div>    
+            </div>
+            </div>   
          `;
         };
 
         picturesHere.innerHTML = s;
+
+        mkTitle();
+
+    } // закрывается drawPic
+
+
+    let p = 2, k = 0;
+
+    function roll(n) {
+        if(++k>p) k=0;
+
+        mid = document.getElementById(`id${n}`);
+
+        mid.innerHTML = `
+        <div>
+            <img onclick="showPic('${gallery[n].fname[k]}', 
+                '${gallery[n].title}')" 
+            onmouseout="stop()"
+                src="images/${gallery[n].fname[k]}" 
+                style="width: ${gallery[n].sw}px">
+                <p><a href="${gallery[n].lnk}">
+                    ${gallery[n].descr}</a></p>
+        </div>
+        
+        `;
+
+        mkTitle();
+
+        timerId = setTimeout(`roll(${n})`,2000);
+
+    }
+
+
+
+    function stop() {
+        clearTimeout(timerId);
+        drawPic();
+
+    }
+
 
         function showPic(p,t) {
             bigPicture.innerHTML = `
@@ -63,6 +109,8 @@
      <p>${t}</p>       
             `;
         }
+
+        function mkTitle() {
 
         find = document.getElementById('picturesHere');
         p1 = find.getElementsByTagName('p');
@@ -78,7 +126,7 @@
                    color: blue;     
             `;
         }
-
+} // function mkTitle
     </script>
 
 </body>
