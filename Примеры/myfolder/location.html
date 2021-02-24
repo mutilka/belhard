@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="p1"></p>
+
+    <a href="#link1">Ссылка 1</a>
+
+    <a name="link1"><h2>Раздел сайта</h2></a>
+
+    <script>
+
+        l1 = window.location.href;
+        l2 = location.protocol;
+        l3 = location.host;
+        l4 = location.pathname;
+        l5 = location.hash;
+        l6 = location.search;
+
+        p1.innerHTML = `
+            <p>href: ${l1}</p>
+            <p>protocol: ${l2}</p>
+            <p>host: ${l3}</p>
+            <p>pathname: ${l4}</p>
+            <p>hash: ${l5}</p>
+            <p>search: ${l6}</p>
+        `;
+    </script>
+
+
+
+</body>
+</html>

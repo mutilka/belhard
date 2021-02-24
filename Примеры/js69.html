@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <p id="p1"></p>
+<button id="b1" onclick="btnClick()">Запустить таймер</button>
+<script>
+
+    lable1 = 'Запустить таймер';
+    lable2 = 'Остановить таймер';
+
+
+    function stop() {
+        b1.innerHTML = lable1;
+        clearTimeout(timerId);
+    }
+    function btnClick() {
+        if (b1.innerHTML == lable2) {
+            stop();
+        } else
+        if (b1.innerHTML == lable1) {
+            b1.innerHTML = lable2;
+            timer();
+        }
+    }
+    function timer() {
+       p1.innerHTML += "Привет " ;
+       timerId = setTimeout(timer, 1000);
+    }
+        
+</script>
+
+</body>
+</html>

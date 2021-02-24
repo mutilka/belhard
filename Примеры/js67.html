@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="box"></div>
+
+    <script>
+
+        // navigator 
+        // history
+        // sreen
+
+        let navi = `
+        ${navigator.appName}<br>
+        ${navigator.appCodeName}<br>
+        ${navigator.appVersion}<br>
+        `;
+
+        let his = history.length;
+
+        let scr1 = screen.width,
+            scr2 = screen.height,
+            scr3 = screen.colorDepth;
+
+
+        box.innerHTML = `
+        <p><b>Браузер:</b> <br>
+            ${navi}</p>
+        <p>
+        <b>Кол-во адресов:</b><br>
+           ${his} 
+        </p>    
+
+        <p>
+        <b>Экран:</b> <br>
+            Разрешение - ${scr1} х ${scr2} <br>
+            Глубина цвета: ${scr3}
+         </p>   
+
+        `;
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body onload="drawPic()">
+    
+    <section id="picturesHere"></section>
+    <section id="bigPicture"></section>
+
+    <script>
+
+        let gallery = [
+            {
+            fname: ['red.jpg','red1.jpg','red2.jpg'], 
+            sw: '300', 
+            descr: 'Красный костел', 
+            lnk: 'https://www.belarus.by/ru/travel/belarus-life/trinity-suburb',
+            title: 'Троицкое предместье — исторический район города Минска, расположенный в северо-восточной части исторического центра на левом берегу реки Свислочь.'    
+        },
+        {
+            fname: ['troi.jpg','troi1.jpg','troi2.jpg'], 
+            sw: '300', 
+            descr: 'Троицкое предместье', 
+            lnk: 'https://msj.by/katolicheskie-xramy/krasnyj-kostel-v-minsk',
+            title: 'В храме святого Симеона и святой Елены находится полномасштабная копия Туринской Плащаницы.'    
+        },
+        {
+            fname: ['mir.jpg','mir1.jpg','mir2.jpg'], 
+            sw: '300', 
+            descr: 'Мирский замок', 
+            lnk: 'https://mirzamak.by/',
+            title: 'Построенный в начале XVI в. магнатом Ю. И. Ильиничем замок стал первым частнособственническим замком на землях Белоруссии.'    
+        },
+
+        ];
+
+        function drawPic() {
+        s='';
+        for (i=0; i<gallery.length; i++) {
+
+            s += `
+            <div><div id="id${i}">
+                <img onclick="showPic('${gallery[i].fname[0]}', 
+                '${gallery[i].title}')" 
+            onmouseover="timerId=setTimeout('roll(${i})',1000)"
+            onmouseout="clearTimeout(timerId)"    
+                src="images/${gallery[i].fname[0]}" 
+                style="width: ${gallery[i].sw}px">
+                <p><a href="${gallery[i].lnk}">
+                    ${gallery[i].descr}</a></p>
+            </div>
+            </div>    
+         `;
+        };
+
+        picturesHere.innerHTML = s;
+        mkTitle();
+    } //  function drawPic() 
+     
+    let p = 2, k = 0;
+
+    function roll(n) {
+        if(++k>p) k=0;
+
+        mid = document.getElementById(`id${n}`);
+        mid.innerHTML = `<div>
+    <img onclick="showPic('${gallery[n].fname[k]}', 
+        '${gallery[n].title}')" 
+    onmouseout="stop()"    
+        src="images/${gallery[n].fname[k]}" 
+        style="width: ${gallery[n].sw}px">   
+        <p><a href="${gallery[n].lnk}">
+                    ${gallery[n].descr}</a></p> 
+            </div>
+        `;
+        mkTitle();
+        timerId=setTimeout(`roll(${n})`,2000);
+    }
+
+    function stop() {
+        clearTimeout(timerId);
+        drawPic();
+    }
+
+
+        function showPic(p,t) {
+            bigPicture.innerHTML = `
+     <img src="images/${p}" onclick="bigPicture.innerHTML=''" style="width: 1000px">
+     <p>${t}</p>       
+            `;
+        }
+
+        function mkTitle() {
+        find = document.getElementById('picturesHere');
+        p1 = find.getElementsByTagName('p');
+        a1 = find.getElementsByTagName('a');
+
+        for (j=0; j<p1.length; j++) {
+            p1[j].style.cssText = `
+                   font-size: 18pt;
+                   text-align: center;     
+            `;
+            a1[j].style.cssText = `
+                   text-decoration: none;
+                   color: blue;     
+            `;
+        }
+    } //function mkTitle()
+
+    </script>
+
+</body>
+</html>
