@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<div id="box"></div>
+
+<body>
+    
+
+    <script>
+
+// navigator
+//     history
+//     screen 
+
+// http://www.wisdomweb.ru/JSd/window.php
+
+
+        let navi = `
+        
+        ${navigator.appName}<br>
+        ${navigator.appCodeName}<br>
+        ${navigator.appVersion}<br>
+        `;
+
+        let his = history.length;
+
+        let scr1 = screen.width,
+        scr2 = screen.height,
+        scr3 = screen.colorDepth;
+
+        box.innerHTML = `
+        <p><b>Browser:</b><br>
+            ${navi}</p>
+        <p><b>Количество адресов:</b> <br>    
+            ${his}</p>
+        <p><b>Параметры экрана</b><br>    
+            Разрешение в пикселях - ${scr1} x ${scr2}<br>
+            Глубина цвета: ${scr3}
+        </p>
+        
+        `;
+
+    </script>
+
+
+</body>
+</html>
