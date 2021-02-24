@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onclick="eve(event)">
+    
+<img src="images/world.gif" alt="">
+
+
+<script>
+
+    function eve(e) {
+        let s="";
+
+        s = `Тип события: ${e.type}\n`;
+        s += `Источник события: ${e.srcElement.tagName}\n`;
+        s+= `Координата Х: ${e.clientX}; Координата Y: ${e.clientY};`;
+        
+        alert(s);
+    }
+
+</script>
+
+</body>
+</html>
