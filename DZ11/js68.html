@@ -6,29 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body onclick="eve(event)">
-    
+<!-- <body onclick="eve(event)" onmousemove="mouseShowHandler()"> -->
+
+<body onclick="eve(event)" onmousemove="coord(event)">
+
+    <!-- <input onmousemove="this.value = event.clientX+':'+event.clientY"> -->
+
+    <!-- <input onmousemove="value=event.clientX+':'+event.clientY" value="Наведи на меня мышь"> -->
+
+        <input id="cm">
+
+
+<input id="mouseX">
+<input id="mouseY">
+
 <p onclick="okno()"><img src="images/world.gif" alt=""></p>
+
+
 
 
 <script>
 
-    function eve(e) {
-        let s="";
 
-        s = `Тип события: ${e.type}\n`;
-        s += `Источник события: ${e.srcElement.tagName}\n`;
-        s+= `Координата Х: ${e.clientX}; Координата Y: ${e.clientY};`;
-        
-        alert(s);
-    }
+document.onmousemove = function mouseMove(event){
+document.getElementById('mouseX').value = event.clientX;
+document.getElementById('mouseY').value = event.clientY;
+}
 
 
 
-    function okno() {
-            window.open("window.html", null, 
-            "width=640, height=480");
+        function coord(event) {
+            document.getElementById('cm').value = event.clientX + ':' + event.clientY;
+
+
+            // cx = event.clientX;
+            // cy = event.clientY;
+            // value = `${cx}:${cy}`;
+            
         }
+
+        function eve(e) {
+            let s="";
+
+            s = `Тип события: ${e.type}\n`;
+            s += `Источник события: ${e.srcElement.tagName}\n`;
+            s+= `Координата Х: ${e.clientX}; Координата Y: ${e.clientY};`;
+            
+            alert(s);
+        }
+
+
+
+        function okno() {
+                window.open("window.html", null, 
+                "width=210, height=150");
+            }
+
+    
+
+
 
 </script>
 
