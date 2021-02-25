@@ -9,17 +9,10 @@
     <style>
 
         img { 
-            cursor: pointer;
-            width: 100%;
+            /* cursor: pointer; */
+            /* width: 100%; */
 
          }
-
-        /* #map {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-        } */
 
         div {
             display: flex;
@@ -30,18 +23,24 @@
         }
 
         div:nth-child(2) {
-            border: 3px solid rgb(0, 255, 21);
+            border: 1px solid green;
+            border-radius: 10px 100px / 120px;
+            padding: 0px 5px 0px 15px;
+            background-color: chartreuse;
             position: absolute;
-            right: 10px;
+            right: 15px;
             top: 10px;
         }
 
-        /* #cm {
-            position: relative;
-            margin-top: -1000px;
-            margin-left: 1000px;
-            
-        } */
+         input {
+            width: 70px;
+            text-align: center;
+            border: none;
+            background-color: chartreuse;
+            vertical-align: middle;
+        }
+         
+
 
     </style>
 
@@ -49,39 +48,89 @@
 
 <body onclick="eve(event)">
 
+    
     <div>
 
-        <div onclick="okno()"><img src="images/world.gif" alt=""></div>
-        <div><input id="cm" value="Координаты мышки"></n></div>
+
+        <div><img src="images/world.gif" alt=""></div>
+        <div>Координаты мышки:<br><input id="cm" value="0:0"></n></div>
+
         
     </div>
 
+    
+
 <script>
 
-       document.onmousemove = function coord(event) {
-            document.getElementById('cm').value = event.clientX + ':' + event.clientY; 
+        let london = {
+            lv: 670,
+            pv: 790,
+            ln: 175,
+            pn: 195,
         }
 
-        function eve(e) {
+        // alert(london.pv);
+
+    //    document.onmousemove = function coord(event) {
+    //         document.getElementById('cm').value = event.clientX + ':' + event.clientY;
+    //     }
+
+       document.onmousemove = function coord() {
+            document.getElementById('cm').value = event.pageX + ':' + event.pageY;
+        }
+
+
+        let x1 = '';
+        let y1 = '';
+        
+
+        // function eve(e) {
+        //     let s="";
+
+        //     s = `Тип события: ${e.type}\n`;
+        //     s += `Источник события: ${e.srcElement.tagName}\n`;
+        //     s+= `Координата Х: ${e.clientX}; Координата Y: ${e.clientY};`;
+
+        //     x1 = e.clientX;
+        //     y1 = e.clientY;
+
+
+        //     if (x1 >= 670 && x1 <= 790 && y1 >= 175 && y1 <= 195) {
+        //         alert('Добро пожаловать в Лондон!');
+        //         okno();
+        //     }
+        
+        //     // alert(s);
+        // }
+
+                function eve(e) {
             let s="";
 
             s = `Тип события: ${e.type}\n`;
             s += `Источник события: ${e.srcElement.tagName}\n`;
             s+= `Координата Х: ${e.clientX}; Координата Y: ${e.clientY};`;
-            
-            alert(s);
+
+            // x1 = e.clientX;
+            // y1 = e.clientY;
+            x1 = e.pageX;
+            y1 = e.pageY;
+
+
+            if (x1 >= 670 && x1 <= 790 && y1 >= 175 && y1 <= 195) {
+                alert('Добро пожаловать в Лондон!');
+                okno();
+            }
+        
+            // alert(s);
         }
+
+
 
         function okno() {
                 window.open("window.html", null, 
-                "width=210, height=150");
+                "width=300, height=300");
             }
-
-
     
-
-
-
 </script>
 
 </body>
