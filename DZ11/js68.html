@@ -5,44 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+
+        img { 
+            cursor: pointer;
+            width: 100%;
+
+         }
+
+        /* #map {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        } */
+
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        div:nth-child(2) {
+            border: 3px solid rgb(0, 255, 21);
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+
+        /* #cm {
+            position: relative;
+            margin-top: -1000px;
+            margin-left: 1000px;
+            
+        } */
+
+    </style>
+
 </head>
-<!-- <body onclick="eve(event)" onmousemove="mouseShowHandler()"> -->
 
-<body onclick="eve(event)" onmousemove="coord(event)">
+<body onclick="eve(event)">
 
-    <!-- <input onmousemove="this.value = event.clientX+':'+event.clientY"> -->
+    <div>
 
-    <!-- <input onmousemove="value=event.clientX+':'+event.clientY" value="Наведи на меня мышь"> -->
-
-        <input id="cm">
-
-
-<input id="mouseX">
-<input id="mouseY">
-
-<p onclick="okno()"><img src="images/world.gif" alt=""></p>
-
-
-
+        <div onclick="okno()"><img src="images/world.gif" alt=""></div>
+        <div><input id="cm" value="Координаты мышки"></n></div>
+        
+    </div>
 
 <script>
 
-
-document.onmousemove = function mouseMove(event){
-document.getElementById('mouseX').value = event.clientX;
-document.getElementById('mouseY').value = event.clientY;
-}
-
-
-
-        function coord(event) {
-            document.getElementById('cm').value = event.clientX + ':' + event.clientY;
-
-
-            // cx = event.clientX;
-            // cy = event.clientY;
-            // value = `${cx}:${cy}`;
-            
+       document.onmousemove = function coord(event) {
+            document.getElementById('cm').value = event.clientX + ':' + event.clientY; 
         }
 
         function eve(e) {
@@ -55,12 +72,11 @@ document.getElementById('mouseY').value = event.clientY;
             alert(s);
         }
 
-
-
         function okno() {
                 window.open("window.html", null, 
                 "width=210, height=150");
             }
+
 
     
 
