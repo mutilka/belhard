@@ -13,17 +13,13 @@
         }
 
         img { 
-            /* cursor: pointer; */
-            /* width: 100%; */
 
          }
 
         div {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-
+            justify-content: left;
         }
 
         div:nth-child(2) {
@@ -46,55 +42,98 @@
 
         #t1 {
             border: 1px solid rgb(0, 8, 255);
-            border-radius: 10px;
-            padding: 0px 5px 0px 5px;
             background-color: coral;
-            width: 100px;
+            width: 90px;
+            height: 25px;
+            align-items: center;
+            justify-content: center;
+            opacity: 80%;
 
             position: absolute;
-            top: 180px;
-            right: ;
-            bottom: ;
-            left: 560px;
+            top: 170px;
+            left: 905px;
             cursor: pointer;
-
         }
-         
 
+        #t2 {
+            border: 1px solid rgb(0, 8, 255);
+            background-color: coral;
+            width: 90px;
+            height: 25px;
+            align-items: center;
+            justify-content: center;
+            opacity: 80%;
+
+            position: absolute;
+            top: 270px;
+            left: 1690px;
+            cursor: pointer;
+        }
+
+        #t3 {
+            border: 1px solid rgb(0, 8, 255);
+            background-color: coral;
+            width: 120px;
+            height: 25px;
+            align-items: center;
+            justify-content: center;
+            opacity: 80%;
+
+            position: absolute;
+            top: 235px;
+            left: 605px;
+            cursor: pointer;
+        }
 
     </style>
 
 </head>
 
-<body onclick="eve(event)">
-
-    
+<body >
+   
     <div>
-
 
         <div><img src="images/world.gif" alt=""></div>
         <div>Координаты мышки:<br><input id="cm" value="0:0"></n></div>
-        <div id="t1">london</div>
+        <div id="t1" onclick="eve(event)"></div>
+        <div id="t2" onclick="eve(event)"></div>
+        <div id="t3" onclick="eve(event)"></div>
 
-        
     </div>
-
-    
 
 <script>
 
-        let london = {
-            lv: 670,
-            pv: 790,
-            ln: 175,
-            pn: 195,
-        }
+    let Cities = {
 
-        // alert(london.pv);
+        London: {
+            titl: "London",
+            lv: 905,
+            pv: 995,
+            ln: 170,
+            pn: 195,    
+        },
 
-    //    document.onmousemove = function coord(event) {
-    //         document.getElementById('cm').value = event.clientX + ':' + event.clientY;
-    //     }
+        Tokio: {
+            titl: "Tokio",
+            lv: 1690,
+            pv: 1770,
+            ln: 270,
+            pn: 295,    
+        },
+
+        NewYork: {
+            titl: "NewYork",
+            lv: 605,
+            pv: 725,
+            ln: 236,
+            pn: 260,    
+        },
+    };
+
+    t1.innerHTML = Cities.London.titl;
+    t2.innerHTML = Cities.Tokio.titl;
+    t3.innerHTML = Cities.NewYork.titl;
+
 
        document.onmousemove = function coord() {
             document.getElementById('cm').value = event.pageX + ':' + event.pageY;
@@ -104,25 +143,6 @@
         let x1 = '';
         let y1 = '';
         
-
-        // function eve(e) {
-        //     let s="";
-
-        //     s = `Тип события: ${e.type}\n`;
-        //     s += `Источник события: ${e.srcElement.tagName}\n`;
-        //     s+= `Координата Х: ${e.clientX}; Координата Y: ${e.clientY};`;
-
-        //     x1 = e.clientX;
-        //     y1 = e.clientY;
-
-
-        //     if (x1 >= 670 && x1 <= 790 && y1 >= 175 && y1 <= 195) {
-        //         alert('Добро пожаловать в Лондон!');
-        //         okno();
-        //     }
-        
-        //     // alert(s);
-        // }
 
                 function eve(e) {
             let s="";
@@ -137,15 +157,28 @@
             y1 = e.pageY;
 
 
-            if (x1 >= 670 && x1 <= 790 && y1 >= 175 && y1 <= 195) {
-                alert('Добро пожаловать в Лондон!');
+            if (x1 >= Cities.London.lv && x1 <= Cities.London.pv && y1 >= Cities.London.ln && y1 <= Cities.London.pn) {
+                alert(`Добро пожаловать в ${Cities.London.titl}!`);
                 okno();
             }
-        
-            // alert(s);
+
+            if (x1 >= Cities.Tokio.lv && x1 <= Cities.Tokio.pv && y1 >= Cities.Tokio.ln && y1 <= Cities.Tokio.pn) {
+                alert(`Добро пожаловать в ${Cities.Tokio.titl}!`);
+                okno();
+            }
+
+            if (x1 >= Cities.NewYork.lv && x1 <= Cities.NewYork.pv && y1 >= Cities.NewYork.ln && y1 <= Cities.NewYork.pn) {
+                alert(`Добро пожаловать в ${Cities.NewYork.titl}!`);
+                okno();
+            }
+
+ 
+            // for (i = 0; i <= Cities.length; i++) {
+
+            // }
+
+
         }
-
-
 
         function okno() {
                 window.open("window.html", null, 
