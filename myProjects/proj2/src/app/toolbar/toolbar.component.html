@@ -1,0 +1,22 @@
+<!-- <p>toolbar works!</p> -->
+
+<section>
+    <h1>Пример Toolbar</h1>
+<mat-toolbar>
+
+    <!-- <mat-toolbar-row>
+      <span>Одежда <a href="https://angular.io/cli">CLI</a></span>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+        <span>Обувь <a href="https://angular.io/cli">CLI</a></span>
+      </mat-toolbar-row>
+      <mat-toolbar-row>
+        <span>Аксессуары <a href="https://angular.io/cli">CLI</a></span>
+      </mat-toolbar-row> -->
+      
+      <mat-toolbar-row *ngFor="let tools of toolbarTitle">
+        <span> {{ tools }} <a href="https://angular.io/cli">CLI</a></span>
+      </mat-toolbar-row>
+
+</mat-toolbar>
+</section>
