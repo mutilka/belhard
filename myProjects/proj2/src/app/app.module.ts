@@ -7,10 +7,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
 
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ButtonsComponent } from './buttons/buttons.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 
@@ -20,6 +22,7 @@ import { ButtonsComponent } from './buttons/buttons.component';
     AppComponent,
     ToolbarComponent,
     ButtonsComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +30,7 @@ import { ButtonsComponent } from './buttons/buttons.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatMenuModule,
 
   ],
   providers: [],
