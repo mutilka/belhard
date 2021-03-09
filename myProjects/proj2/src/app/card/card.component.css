@@ -1,8 +1,35 @@
 .example-card {
-  max-width: 400px;
+  max-width: 286px;
+  min-height: 545px;
 }
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
+.myheader {
+  background: #7cc576;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.stars, .addstars {
+  text-align: center;
+  position: relative;
+  top: -30px;
+}
+
+.stars {
+  color: #ccc;
+}
+
+.addstars {
+  animation: flyStars .5s;
+  color: #f63440;
+}
+
+@keyframes flyStars {
+  0% {opacity: 0;}
+  50% {opacity: 0;}
+  70% {opacity: 0; transform: translateX(30%);}
+  100% {opacity: 1; transform: translateX(0);}
+}
+
