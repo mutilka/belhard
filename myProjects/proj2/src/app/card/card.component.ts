@@ -1,5 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
+
+const card = {
+  sales: false,
+  atitle: "Подарочный сертификат",
+  htitle: "Туфли летние",
+  hsubtitle: "Rieker Men",
+  images: "13.jpg",
+  mtitle: "Туфли летние Rieker Men - натуральная кожа",
+  msubtitle: "Ограниченная серия",
+  url: "https://ya.ru/",
+  price: 148
+}
+
 const showElement = {
   myElement: false
 };
@@ -17,6 +30,8 @@ export class CardComponent implements OnInit {
     showElement.myElement = !showElement.myElement;
 
   }
+
+  card = card;
 
   constructor() { }
 

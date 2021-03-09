@@ -1,13 +1,16 @@
 <!-- <p>card works!</p> -->
-<section>
+<!-- <section>
   <h1>Пример карточки</h1>
-<mat-card class="example-card" (mouseenter)="toogleElement(showElement.myElement)" (mouseleave)="toogleElement(showElement.myElement)">
+<mat-card class="example-card"
+(mouseenter)="toogleElement(showElement.myElement)"
+(mouseleave)="toogleElement(showElement.myElement)"
+[ngClass]="{'addshadow': showElement.myElement}">
     <mat-card-header>
-      <div mat-card-avatar class="myheader"><mat-icon>card_giftcard</mat-icon></div>
+      <div mat-card-avatar title="Подарочный сертификат" class="myheader"><mat-icon>card_giftcard</mat-icon></div>
       <mat-card-title>Туфли летние</mat-card-title>
       <mat-card-subtitle>Rieker Men</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="./assets/images/13.jpg" alt="Photo of a Shiba Inu">
+    <a href="#" title="Туфли летние Rieker Men - натуральная кожа"><img mat-card-image src="./assets/images/13.jpg" alt="Photo of a Shiba Inu"></a>
     <mat-card-content>
       <div class="stars" [ngClass]="{'addstars': showElement.myElement}">
         <mat-icon>star</mat-icon>
@@ -16,15 +19,64 @@
         <mat-icon>star_half</mat-icon>
         <mat-icon>star_border</mat-icon>
       </div>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
+      <p>Материал верха: натуральная кожа</p>
+      <p>Ограниченная серия</p>
+      <p><span class="price">148,0 руб.</span></p>
+      <ul>
+        <li><button mat-icon-button>
+          <mat-icon>lens</mat-icon>
+        </button></li>
+        <li><button mat-icon-button>
+          <mat-icon>lens</mat-icon>
+        </button></li>
+        <li><button mat-icon-button>
+          <mat-icon>lens</mat-icon>
+        </button></li>
+      </ul>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
+      <p class="mybutton" title="Добавить товар в корзину" [ngClass]="{'addbutton': showElement.myElement}"><a href="#">ДОБАВИТЬ В КОРЗИНУ</a></p>
+    </mat-card-actions>
+  </mat-card>
+</section> -->
+
+<section>
+  <h1>Пример карточки</h1>
+<mat-card class="example-card"
+(mouseenter)="toogleElement(showElement.myElement)"
+(mouseleave)="toogleElement(showElement.myElement)"
+[ngClass]="{'addshadow': showElement.myElement}">
+    <mat-card-header>
+      <div mat-card-avatar title={{card.atitle}} class="myheader"><mat-icon>card_giftcard</mat-icon></div>
+      <mat-card-title>Туфли летние</mat-card-title>
+      <mat-card-subtitle>Rieker Men</mat-card-subtitle>
+    </mat-card-header>
+    <a href="{{card.url}}" title={{card.mtitle}}><img mat-card-image src="./assets/images/{{card.images}}" alt="Photo of a Shiba Inu"></a>
+    <mat-card-content>
+      <div class="stars" [ngClass]="{'addstars': showElement.myElement}">
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star_half</mat-icon>
+        <mat-icon>star_border</mat-icon>
+      </div>
+      <p>Материал верха: натуральная кожа</p>
+      <p>Ограниченная серия</p>
+      <p><span class="price">{{ card.price }}.0 руб.</span></p>
+      <ul>
+        <li><button mat-icon-button>
+          <mat-icon>lens</mat-icon>
+        </button></li>
+        <li><button mat-icon-button>
+          <mat-icon>lens</mat-icon>
+        </button></li>
+        <li><button mat-icon-button>
+          <mat-icon>lens</mat-icon>
+        </button></li>
+      </ul>
+    </mat-card-content>
+    <mat-card-actions>
+      <p class="mybutton" title="Добавить товар в корзину" [ngClass]="{'addbutton': showElement.myElement}"><a href="#">ДОБАВИТЬ В КОРЗИНУ</a></p>
     </mat-card-actions>
   </mat-card>
 </section>
