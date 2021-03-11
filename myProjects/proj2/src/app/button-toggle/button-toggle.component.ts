@@ -35,7 +35,7 @@ const menWears = [
   price: 241
 },
 {
-  sales: false,
+  sales: true,
   atitle: 'Подарочный сертификат',
   htitle: 'Пальто мужское',
   hsubtitle: 'BAZIONI',
