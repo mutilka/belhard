@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        form {
+        width: 250px;
+        margin: 0 auto;
+        /* border: 1px solid blue; */
+    }
+
+    input, select, textarea, 
+    progress, meter, button {
+        padding-left: 5px;
+        width: 100%;
+        margin-bottom: 10px; 
+        box-sizing: border-box;
+    }
+
+    </style>
+
+</head>
+<body>
+    
+    <form name="form2" action="server.php">
+
+        <label for="in1">Укажите пол:</label>
+        <select name="n1" id="in1">
+        <option value="0">сделайте выбор</option>
+        <option value="1">мужской</option>
+        <option value="2">женский</option>
+        </select>
+
+        <label for="in2">Сведения о Вас:</label>
+        <textarea name="n2" id="in2" cols="30" 
+        rows="5" 
+        placeholder="Расскажите о себе"></textarea>
+
+        <input type="submit" value="Отправить">
+        <input type="reset" value="Очистить">
+
+        <label for="in3">Обработка...</label>
+        <progress name="n3" id="in3">работаю...</progress>
+
+        <label for="in4">Обработка завершена на 75%:</label>
+        <progress name="n4" id="in4"
+        value="75" max="100">3/4 завершено...</progress>
+
+        <label for="in5">Загружено 91%</label>
+        <meter name="n5" id="in5" min="0"
+        max="100" value="91" low="40"
+        high="90" optimum="50">загружаю</meter>
+
+    </form>
+
+</body>
+</html>

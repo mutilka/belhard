@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        form {
+        width: 250px;
+        margin: 0 auto;
+        /* border: 1px solid blue; */
+    }
+
+    input {
+        padding-left: 5px;
+        width: 100%;
+        margin-bottom: 10px; 
+        box-sizing: border-box;
+    }
+
+    fieldset { margin-bottom: 10px; }
+    fieldset input {
+        display: inline;
+        width: 10%;
+    }
+
+#send {
+    width: 100%;
+    /* margin: 0 auto; */
+    margin-bottom: 10px;
+}
+    </style>
+
+</head>
+<body>
+    
+    <form action="serv.php" name="form3">
+        <fieldset name="age">
+            <legend>Выберите возраст</legend>
+            
+<input type="radio" name="n1" id="r1" value="1">
+<label for="r1">до 30 лет</label>
+
+<input type="radio" name="n1" id="r2" value="2">
+<label for="r2">31 - 50 лет</label>
+
+<input type="radio" name="n1" id="r3" value="3">
+<label for="r3">старше 50</label>
+
+        </fieldset>
+
+        <fieldset name="hobby">
+            <legend>Ваши увлечения:</legend>
+            
+<input type="checkbox" name="n2" id="b1" value="1">
+<label for="b1">Спорт</label>
+
+<input type="checkbox" name="n2" id="b2" value="2">
+<label for="b2">Кино / Театр</label>
+
+<input type="checkbox" name="n2" id="b3" value="3">
+<label for="b3">Туризм</label>
+        </fieldset> 
+
+        <input type="image" title="Отправить форму"
+    id="send" src="images/but1.png">  
+    <input type="reset">    
+    </form>
+
+    <script>
+        function init() {
+           r1.addEventListener('input',check('r'));  
+           b1.addEventListener('input',check('b')); 
+        
+        }
+
+        function check(choice) {
+            if (choice == 'r') {
+              if (!r1.checked && !r2.checked 
+                  && !r3.checked) {
+                    r1.setCustomValidity("Выбеите вариант")
+                  }  else r1.setCustomValidity("")
+            } else if (choice == 'b') {
+              if (!b1.checked && !b2.checked 
+                  && !b3.checked) {
+                    b1.setCustomValidity("Выбеите хобби")
+                  }  else b1.setCustomValidity("")
+            } 
+        }
+
+    send.addEventListener('click',init); 
+
+    </script>
+
+
+</body>
+</html>

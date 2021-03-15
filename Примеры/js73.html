@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        section {
+            width: 500px;
+            padding: 20px;
+            margin: 0 auto;
+            /* border: 1px solid brown; */
+            display: flex;
+            justify-content: space-around;
+        }
+
+        div {
+            width: 110px;
+            padding: 3px;
+            border: 1px solid brown;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .fade { transition: .5s; }
+
+        .start { animation: fadeIn 2s; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+    </style>
+
+</head>
+<body class="start">
+    
+    <section>
+        <div id="id1" onmouseover="tab('winter.jpg')">Зима</div>
+        <div id="id2" onmouseover="tab('spring.jpg')">Весна</div>
+        <div id="id3" onmouseover="tab('summer.jpg')">Лето</div>
+        <div id="id4" onmouseover="tab('autumn.jpg')">Осень</div>
+    </section>
+    <section>
+    <img src="images/winter.jpg" id="pc" class="fade">
+    </section>
+
+    <script>
+
+        let tab = (f) => {
+           
+            pc.style.opacity = '0';
+            setTimeout('pic()', 500);
+
+            pic = () => {
+            pc.src = `images/${f}`;
+            pc.style.opacity = '1';
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        section {
+            width: 500px;
+            padding: 20px;
+            margin: 0 auto;
+            /* border: 1px solid brown; */
+            display: flex;
+            justify-content: space-around;
+        }
+
+        div {
+            width: 110px;
+            padding: 3px;
+            border: 1px solid brown;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .fade { transition: .5s; }
+
+        .start { animation: fadeIn 2s; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .buttonOn {
+            background: #00f;
+            color: #fff;
+        }
+
+        .buttonOff {
+            background: #fff;
+            color: #000;
+        }
+
+    </style>
+
+</head>
+<body class="start">
+    
+    <section>
+        <div id="id1" onmouseover="tab(id1,'winter.jpg')">Зима</div>
+        <div id="id2" onmouseover="tab(id2,'spring.jpg')">Весна</div>
+        <div id="id3" onmouseover="tab(id3,'summer.jpg')">Лето</div>
+        <div id="id4" onmouseover="tab(id4,'autumn.jpg')">Осень</div>
+    </section>
+    <section>
+    <img src="images/winter.jpg" id="pc" class="fade">
+    </section>
+
+    <script>
+
+        let tab = (idn, f) => {
+           
+         
+            menu = document.querySelectorAll('section > div');
+            menu.forEach(function(item, i, menu) {
+                item.setAttribute('class','buttonOff');
+            })
+
+            pc.style.opacity = '0';
+            setTimeout('pic()', 500);
+
+            pic = () => {
+            pc.src = `images/${f}`;
+            pc.style.opacity = '1';
+
+            idn.setAttribute('class','buttonOn');
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+</html>

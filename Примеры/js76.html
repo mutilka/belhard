@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    form {
+        width: 250px;
+        margin: 0 auto;
+        /* border: 1px solid blue; */
+    }
+
+    input {
+        padding-left: 5px;
+        width: 100%;
+        margin-bottom: 10px; 
+        box-sizing: border-box;
+    }
+
+    input:in-range {
+        background: #cfc;
+        color: #366;
+    }
+
+    input:out-of-range {
+        background: #f9c3d2;
+        color: #633;
+    }
+
+    input:focus {
+        background: #3c6;
+        color: #fff;
+    }
+
+</style>
+
+</head>
+<body>
+    
+    <form name="my0" action="server1.php">
+
+        <label for="in1">Имя:</label>
+        <input type="text" name="n1" id="in1" 
+        placeholder="Введите имя"
+        autofocus>
+
+        <label for="in2">Email:</label>
+        <input type="email" name="n2" id="in2" 
+        placeholder="Введите Email">
+
+        <label for="in3">Пароль:</label>
+        <input type="password" name="n3" id="in3" 
+        placeholder="Введите пароль">
+
+        <label for="in4">Сайт:</label>
+        <input type="url" name="n4" id="in4" 
+        placeholder="Введите url-адрес">
+
+        <label for="in5">Телефон:</label>
+        <input type="tel" name="n5" id="in5"
+        placeholder="Введите телефон">
+
+       <label for="in7">Введите число от 0 до 15 
+           с шагом 5:</label>
+       <input type="number" name="n7" id="in7"
+        min="0" max="15" step="5"
+       placeholder="Введите число"> 
+
+       <label for="in8">Введите ID:</label>
+       <input pattern="[A-Z]{3}-[0-9]{3}" name="n8" id="in8"
+       title="Формат: ABC-999"
+       placeholder="Введите ID в формате ABC-999">
+
+        <input id="send" type="submit" value="Отправить">
+        <input id="warn" type="button" value="Очистить">
+    </form>
+
+    <script>
+
+        function init() {
+    in1.addEventListener('input',
+    check(in1,'Заполните поле имени'));
+    
+    in2.addEventListener('input',
+    check(in2,'Заполните Email'));
+
+
+
+        }
+
+     function check(elem, mess) {
+         if (elem.value == '') 
+         elem.setCustomValidity(mess)
+            else elem.setCustomValidity('');
+     }   
+
+
+        function conf() {
+            let q = confirm('Очистить форму?');
+            if (q) my0.reset();
+        }
+
+        send.addEventListener('click',init);
+        warn.addEventListener('click',conf);
+
+    </script>
+
+
+</body>
+</html>
